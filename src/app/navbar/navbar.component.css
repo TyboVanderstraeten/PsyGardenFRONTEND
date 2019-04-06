@@ -1,0 +1,17 @@
+.navbar {
+  height: 80px;
+}
+
+.logo {
+  height: 65px;
+  padding-top: 20px;
+  align-content: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.buttons {
+  padding-top: 15px;
+}
