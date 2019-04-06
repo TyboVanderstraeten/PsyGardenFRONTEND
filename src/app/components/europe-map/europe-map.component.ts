@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
     './europe-map.component.css']
 })
 export class EuropeMapComponent implements OnInit {
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }
