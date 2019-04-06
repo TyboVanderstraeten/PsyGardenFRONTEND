@@ -2,6 +2,41 @@
   <app-navbar></app-navbar>
 </header>
 
+<div>
+  <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="4.3">
+    <agm-marker [latitude]="51.071690" [longitude]="3.735410">
+      <agm-info-window>
+        <mat-card>
+          <mat-card-title>Lost Theory</mat-card-title>
+          <mat-card-subtitle>09/05/2019 starting at 22:00</mat-card-subtitle>
+          <mat-card-content>Last time at Chinastraat before our HQ moves to Spain!</mat-card-content>
+          <mat-card-actions class="moreDetails"><a mat-button>More details</a></mat-card-actions>
+        </mat-card>
+      </agm-info-window>
+    </agm-marker>
+    <agm-marker [latitude]="47.982244" [longitude]="2.579628">
+        <agm-info-window>
+          <mat-card>
+            <mat-card-title>Lost Theory</mat-card-title>
+            <mat-card-subtitle>09/05/2019 starting at 22:00</mat-card-subtitle>
+            <mat-card-content>Last time at Chinastraat before our HQ moves to Spain!</mat-card-content>
+            <mat-card-actions class="moreDetails"><a mat-button>More details</a></mat-card-actions>
+          </mat-card>
+        </agm-info-window>
+      </agm-marker>
+      <agm-marker [latitude]="58.982244" [longitude]="9.579628">
+          <agm-info-window>
+            <mat-card>
+              <mat-card-title>Lost Theory</mat-card-title>
+              <mat-card-subtitle>09/05/2019 starting at 22:00</mat-card-subtitle>
+              <mat-card-content>Last time at Chinastraat before our HQ moves to Spain!</mat-card-content>
+              <mat-card-actions class="moreDetails"><a mat-button>More details</a></mat-card-actions>
+            </mat-card>
+          </agm-info-window>
+        </agm-marker>
+  </agm-map>
+</div>
+
 <footer>
   <app-footer></app-footer>
 </footer>
