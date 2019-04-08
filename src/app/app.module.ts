@@ -29,6 +29,7 @@ import { MapMarkerComponent } from './components/map-marker/map-marker.component
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
+    //Google API-key configuration
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
     })
