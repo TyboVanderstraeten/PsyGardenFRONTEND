@@ -15,7 +15,7 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput aria-label="Password" type="text" formControlName="password" required />
+            <input matInput aria-label="Password" type="password" formControlName="password" required />
             <mat-error *ngIf="_user.get('password')['errors'] && _user.get('password').touched">
               {{getErrorMessage(_user.get('password')['errors'])}}
             </mat-error>

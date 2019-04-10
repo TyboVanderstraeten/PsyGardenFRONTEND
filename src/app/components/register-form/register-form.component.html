@@ -38,14 +38,14 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput aria-label="Password" type="text" formControlName="password" required />
+            <input matInput aria-label="Password" type="password" formControlName="password" required />
             <mat-error *ngIf="_user.get('password')['errors'] && _user.get('password').touched">
               {{getErrorMessage(_user.get('password')['errors'])}}
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Verify password</mat-label>
-            <input matInput aria-label="Password confirmation" type="text" formControlName="passwordConfirmation"
+            <input matInput aria-label="Password confirmation" type="password" formControlName="passwordConfirmation"
               required />
             <mat-error *ngIf="_user.get('passwordConfirmation')['errors'] && _user.get('passwordConfirmation').touched">
               {{getErrorMessage(_user.get('passwordConfirmation')['errors'])}}
