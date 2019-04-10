@@ -1,0 +1,9 @@
+<div *ngIf="(events$ |async) as events; else loading">
+  <div *ngFor="let event of events" class="shortCards">
+    <app-event-short [event]="event"></app-event-short>
+  </div>
+</div>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

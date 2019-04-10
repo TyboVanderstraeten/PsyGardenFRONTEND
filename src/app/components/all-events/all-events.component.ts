@@ -4,12 +4,11 @@ import { Event } from 'src/app/models/event.model';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-europe-map',
-  templateUrl: './europe-map.component.html',
-  styleUrls: ['./europe-map.component.css']
+  selector: 'app-all-events',
+  templateUrl: './all-events.component.html',
+  styleUrls: ['./all-events.component.css']
 })
-
-export class EuropeMapComponent implements OnInit {
+export class AllEventsComponent implements OnInit {
   private _fetchEvents$: Observable<Event[]>
     = this._eventDataService.events$;
 
@@ -19,7 +18,7 @@ export class EuropeMapComponent implements OnInit {
   ngOnInit() {
   }
 
-  get events(): Observable<Event[]> {
+  get events$(): Observable<Event[]> {
     return this._fetchEvents$;
   }
 

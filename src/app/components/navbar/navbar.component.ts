@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +11,14 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  registerClicked() {
+    alert("You can't register yet!");
+  }
+
+  loginClicked() {
+    alert("You can't login yet!");
   }
 
 }
