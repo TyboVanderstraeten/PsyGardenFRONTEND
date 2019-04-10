@@ -15,7 +15,8 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput aria-label="Password" type="password" formControlName="password" required />
+            <mat-pass-toggle-visibility #toggleP matSuffix></mat-pass-toggle-visibility>
+            <input matInput aria-label="Password" [type]="toggleP.type" formControlName="password" required />
             <mat-error *ngIf="_user.get('password')['errors'] && _user.get('password').touched">
               {{getErrorMessage(_user.get('password')['errors'])}}
             </mat-error>

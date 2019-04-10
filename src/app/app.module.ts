@@ -24,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 
 
 
@@ -57,7 +58,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPasswordStrengthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

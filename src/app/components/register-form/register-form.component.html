@@ -20,7 +20,7 @@
           </mat-form-field>
         </p>
         <p>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" class="email">
             <mat-label>E-mail</mat-label>
             <input matInput aria-label="E-mail" type="text" formControlName="email" required />
             <mat-error *ngIf="_user.get('email')['errors'] && _user.get('email').touched">
@@ -38,14 +38,16 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput aria-label="Password" type="password" formControlName="password" required />
+            <mat-pass-toggle-visibility #toggleP matSuffix></mat-pass-toggle-visibility>
+            <input matInput aria-label="Password" [type]="toggleP.type" formControlName="password" required />
             <mat-error *ngIf="_user.get('password')['errors'] && _user.get('password').touched">
               {{getErrorMessage(_user.get('password')['errors'])}}
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Verify password</mat-label>
-            <input matInput aria-label="Password confirmation" type="password" formControlName="passwordConfirmation"
+            <mat-pass-toggle-visibility #togglePC matSuffix></mat-pass-toggle-visibility>
+            <input matInput aria-label="Password confirmation" [type]="togglePC.type" formControlName="passwordConfirmation"
               required />
             <mat-error *ngIf="_user.get('passwordConfirmation')['errors'] && _user.get('passwordConfirmation').touched">
               {{getErrorMessage(_user.get('passwordConfirmation')['errors'])}}
