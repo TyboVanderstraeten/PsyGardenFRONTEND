@@ -1,3 +1,11 @@
-<agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="4">
-  <app-map-marker></app-map-marker>
-</agm-map>
+<div *ngIf="(coordinates$ | async) as coordinates; else loading">
+  <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="4">
+    <div *ngFor="let coordinate of coordinates">
+      <app-map-marker [latitude]="coordinate.latitude" [longitude]="coordinate.longitde"></app-map-marker>
+    </div>
+  </agm-map>
+</div>
+
+<ng-template #loading>
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>

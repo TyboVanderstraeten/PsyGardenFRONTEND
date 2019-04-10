@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class MapMarkerComponent implements OnInit {
-
+  @Input() public latitude;
+  @Input() public longitude;
 
   constructor() {
 

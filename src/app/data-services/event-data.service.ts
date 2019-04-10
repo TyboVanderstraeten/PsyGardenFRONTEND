@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Event } from 'src/app/models/event.model';
+import { Coordinates } from 'src/app/models/coordinates.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,15 @@ export class EventDataService {
       .pipe(
         map(
           (event: any): Event => Event.fromJSON(event)
+        )
+      );
+  }
+
+  get coordinatesTest$(): Observable<Coordinates> {
+    return this._http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=Walgracht+13,+Deinze,+Oost-Vlaanderen,+&key=AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo`)
+      .pipe(
+        map(
+          (coordinates: any): Coordinates => Coordinates.fromJSON(coordinates)
         )
       );
   }
