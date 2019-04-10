@@ -17,12 +17,13 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 
 //Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatToolbarModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -53,7 +54,10 @@ import { AppRoutingModule } from './app-routing.module';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

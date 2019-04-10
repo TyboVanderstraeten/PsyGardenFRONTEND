@@ -1,3 +1,30 @@
-<p>
-  login-form works!
-</p>
+<div class="loginForm">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="_user" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput aria-label="E-mail" type="text" formControlName="email" required />
+            <mat-error *ngIf="_user.get('email')['errors'] && _user.get('email').touched">
+              {{getErrorMessage(_user.get('email')['errors'])}}
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput aria-label="Password" type="text" formControlName="password" required />
+            <mat-error *ngIf="_user.get('password')['errors'] && _user.get('password').touched">
+              {{getErrorMessage(_user.get('password')['errors'])}}
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <button type="submit" mat-raised-button [disabled]="!_user.valid">Login</button>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
