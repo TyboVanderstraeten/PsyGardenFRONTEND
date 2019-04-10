@@ -12,13 +12,4 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  registerClicked() {
-    alert("You can't register yet!");
-  }
-
-  loginClicked() {
-    alert("You can't login yet!");
-  }
-
 }

@@ -5,7 +5,7 @@ export class Event {
         private _startDate: Date,
         private _endDate: Date,
         private _nrOfDays: Number,
-        private _country: Number,
+        private _country: string,
         private _region: string,
         private _city: string,
         private _street: string,
@@ -21,7 +21,7 @@ export class Event {
     get startDate(): Date { return this._startDate; }
     get endDate(): Date { return this._endDate; }
     get nrOfDays(): Number { return this._nrOfDays; }
-    get country(): Number { return this._country; }
+    get country(): string { return this._country; }
     get region(): string { return this._region; }
     get city(): string { return this._city; }
     get street(): string { return this._street; }
@@ -33,8 +33,8 @@ export class Event {
 
     static fromJSON(json: any): Event {
         const eventFromJSON = new Event(json.name, json.description, json.startDate, json.endDate,
-            json.nrOfDays, json.country, json.region, json.city, json.street, json.streetNr, json.zipCode,
-            json.genres, json.prices, json.resources);
+            json.nrOfDays, json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.eventGenres, json.prices, json.resources
+        );
         return eventFromJSON;
     }
 }

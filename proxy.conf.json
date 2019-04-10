@@ -1,0 +1,12 @@
+{
+    "/PsyGardenAPI":{
+        "target":{
+            "host":"localhost",
+            "protocol":"https",
+            "port":44359
+        },
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"info"
+    }
+}

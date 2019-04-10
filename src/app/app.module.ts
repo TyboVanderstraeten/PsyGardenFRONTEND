@@ -6,13 +6,25 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EuropeMapComponent } from './components/europe-map/europe-map.component';
+import { MapMarkerComponent } from './components/map-marker/map-marker.component';
+import { AllEventsComponent } from './components/all-events/all-events.component';
+import { EventShortComponent } from './components/event-short/event-short.component';
+import { EventFullComponent } from './components/event-full/event-full.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+
 
 //Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatToolbarModule, MatCardModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { AgmCoreModule } from '@agm/core';
-import { MapMarkerComponent } from './components/map-marker/map-marker.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +32,13 @@ import { MapMarkerComponent } from './components/map-marker/map-marker.component
     NavbarComponent,
     FooterComponent,
     EuropeMapComponent,
-    MapMarkerComponent
+    MapMarkerComponent,
+    AllEventsComponent,
+    EventShortComponent,
+    EventFullComponent,
+    PageNotFoundComponent,
+    RegisterFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -28,13 +46,19 @@ import { MapMarkerComponent } from './components/map-marker/map-marker.component
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     MatIconModule,
+    HttpClientModule,
     //Google API-key configuration
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+
+export class AppModule {
+
+}

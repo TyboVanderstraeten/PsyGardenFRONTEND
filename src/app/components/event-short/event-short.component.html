@@ -1,6 +1,6 @@
 <div class="shortCard">
   <mat-card>
-    <mat-card-title>{{event.name}} ({{"HUNGARY".toUpperCase()}})</mat-card-title>
+    <mat-card-title>{{event.name}} ({{event.country.toUpperCase()}})</mat-card-title>
     <mat-card-subtitle>Starting {{event.startDate | date:'dd/MM/yyyy'}} to {{event.endDate|date:'dd/MM/yyyy'}}
       ({{event.nrOfDays}} days)</mat-card-subtitle>
     <img mat-card-image src="assets/img/festivalExample.jpg" class="headerImage" />
@@ -8,9 +8,9 @@
       <p>{{event.description}}</p>
     </mat-card-content>
     <div class="buttons">
-      <a mat-button (click)="addToInterested()">Add to interested</a>
-      <a mat-button (click)="addToGoing()">Add to going</a>
-      <a mat-button (click)="showMoreDetails()">More details</a>
+      <a mat-button>Add to interested</a>
+      <a mat-button>Add to going</a>
+      <a mat-button>More details</a>
     </div>
   </mat-card>
 </div>

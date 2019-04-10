@@ -15,17 +15,4 @@ export class EventShortComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToInterested(){
-    alert("Interested clicked");
-  }
-  
-  addToGoing(){
-    alert("Going clicked");
-
-  }
-
-  showMoreDetails(){
-    alert("More details clicked");
-  }
-
 }

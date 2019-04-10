@@ -1,15 +1,19 @@
 <header>
   <mat-toolbar class="navbar">
     <mat-toolbar-row>
+      <div class="buttons">
+        <a mat-button [routerLink]="['all-events/europe-map']">Map</a>
+        <a mat-button [routerLink]="['all-events']">Events</a>
+      </div>
       <span>
-        <a href="index.html">
+        <a [routerLink]="['all-events']">
           <img class="logo" src="assets/img/psygardenLogo.png" />
         </a>
       </span>
       <span class="spacer"></span>
       <div class="buttons">
-        <a mat-button (click)="registerClicked()">Register</a>
-        <a mat-button (click)="loginClicked()">Login</a>
+        <a mat-button [routerLink]="['register']">Register</a>
+        <a mat-button [routerLink]="['login']">Login</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
