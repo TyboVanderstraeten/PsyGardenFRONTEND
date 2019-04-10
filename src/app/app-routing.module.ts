@@ -6,13 +6,15 @@ import { EuropeMapComponent } from './components/europe-map/europe-map.component
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { EventFullComponent } from './components/event-full/event-full.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'all-events', pathMatch: 'full' },
-  { path: 'all-events/europe-map', component: EuropeMapComponent },
+  { path: 'europe-map', component: EuropeMapComponent },
   { path: 'all-events', component: AllEventsComponent },
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
+  { path: 'all-events/detail-page/:id', component: EventFullComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

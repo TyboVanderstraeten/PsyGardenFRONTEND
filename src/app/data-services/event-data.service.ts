@@ -10,6 +10,9 @@ import { Event } from 'src/app/models/event.model';
 })
 
 export class EventDataService {
+
+  public eventId: Number;
+
   constructor(private _http: HttpClient) {
   }
 
@@ -18,6 +21,15 @@ export class EventDataService {
       .pipe(
         map(
           (list: any[]): Event[] => list.map(Event.fromJSON)
+        )
+      );
+  }
+
+  get event$(): Observable<Event> {
+    return this._http.get(`https://localhost:44359${environment.psyGardenApiUrl}/Events/${this.eventId}`)
+      .pipe(
+        map(
+          (event: any): Event => event.map(Event.fromJSON)
         )
       );
   }

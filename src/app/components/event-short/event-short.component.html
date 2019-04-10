@@ -10,7 +10,7 @@
     <div class="buttons">
       <a mat-button>Add to interested</a>
       <a mat-button>Add to going</a>
-      <a mat-button>More details</a>
+      <a mat-button [routerLink]="['detail-page',event.eventId]">More details</a>
     </div>
   </mat-card>
 </div>

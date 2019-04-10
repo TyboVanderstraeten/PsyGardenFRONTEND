@@ -1,0 +1,8 @@
+<div *ngIf="(event$|async) as event;else loading">
+  <h1>{{event.name}}</h1>
+  <p></p>
+</div>
+
+<ng-template #loading>
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>
