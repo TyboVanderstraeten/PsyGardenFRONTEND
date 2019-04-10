@@ -1,5 +1,32 @@
+.details {
+  padding: 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.headerImage {
+  width: 750px;
+  border-radius: 10px;
+}
+
+.buttons button{
+  margin-top: 10px;
+  margin-right: 10px;
+  width:120px;
+}
+
+
+.genreLink {
+  text-decoration: none;
+  color: black;
+}
+
+.resourceLink {
+  color: black;
+}
+
 .loading {
-    margin-left: 47%;
-    margin-top: 20%;
-    margin-bottom:20%;
-  }
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}

@@ -8,9 +8,9 @@
       <p>{{event.description}}</p>
     </mat-card-content>
     <div class="buttons">
-      <a mat-button>Add to interested</a>
-      <a mat-button>Add to going</a>
-      <a mat-button [routerLink]="['detail-page',event.eventId]">More details</a>
+      <button mat-raised-button>Add to interested</button>
+      <button mat-raised-button>Add to going</button>
+      <button mat-raised-button [routerLink]="['detail-page',event.eventId]">More details</button>
     </div>
   </mat-card>
 </div>

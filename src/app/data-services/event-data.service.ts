@@ -33,13 +33,4 @@ export class EventDataService {
         )
       );
   }
-
-  deleteEvent$(): boolean {
-    if (this._http.delete(`${environment.psyGardenApiUrl}/Events/${this.eventId}`)) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
 }

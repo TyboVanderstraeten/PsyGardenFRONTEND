@@ -1,5 +1,44 @@
 <div *ngIf="(event$|async) as event;else loading">
-  <h1>{{event.name}}</h1>
+  <div class="details">
+    <div>
+      <h1>{{event.name}}</h1>
+    </div>
+    <div>
+      <h5>Starts: {{event.startDate|date:'dd/MM/yyyy hh:mm a'}} | Ends: {{event.endDate|date:'dd/MM/yyyy hh:mm a'}}</h5>
+    </div>
+    <div>
+      <img src="assets/img/festivalExample.jpg" class="headerImage" />
+    </div>
+    <div class="buttons">
+      <button mat-raised-button>Interested</button>
+      <button mat-raised-button>Going</button>
+    </div>
+    <h4>Description</h4>
+    <div>
+      <p>{{event.description}}</p>
+    </div>
+    <h4>Location</h4>
+    <div>
+      <p>{{event.street}} {{event.streetNr}}, {{event.zipCode}} {{event.city.toUpperCase()}}</p>
+      <p>{{event.region}}, {{event.country}}</p>
+    </div>
+    <h4>Genres</h4>
+    <div *ngFor="let genre of event.genres">
+      <a href="https://www.google.com/search?q={{genre.genre.name}}" class="genreLink"
+        target="_blank">#{{genre.genre.name}}</a>
+    </div>
+    <h4>Prices</h4>
+    <div *ngFor="let price of event.prices">
+      <p>{{price.name}}: {{price.cost|currency:'EUR'}} - {{price.description}}</p>
+    </div>
+    <h4>Links</h4>
+    <div *ngFor="let resource of event.resources">
+      <section *ngIf="!resource.alt">
+        <p>{{resource.name}}: <a href="https://{{resource.url}}" class="resourceLink"
+            target="_blank">{{resource.url}}</a></p>
+      </section>
+    </div>
+  </div>
 </div>
 
 <ng-template #loading>
