@@ -17,7 +17,7 @@ export class EventDataService {
   }
 
   get events$(): Observable<Event[]> {
-    return this._http.get(`https://localhost:44359${environment.psyGardenApiUrl}/Events/`)
+    return this._http.get(`${environment.psyGardenApiUrl}/Events/`)
       .pipe(
         map(
           (list: any[]): Event[] => list.map(Event.fromJSON)
@@ -26,11 +26,20 @@ export class EventDataService {
   }
 
   get event$(): Observable<Event> {
-    return this._http.get(`https://localhost:44359${environment.psyGardenApiUrl}/Events/${this.eventId}`)
+    return this._http.get(`${environment.psyGardenApiUrl}/Events/${this.eventId}`)
       .pipe(
         map(
-          (event: any): Event => event.map(Event.fromJSON)
+          (event: any): Event => Event.fromJSON(event)
         )
       );
+  }
+
+  deleteEvent$(): boolean {
+    if (this._http.delete(`${environment.psyGardenApiUrl}/Events/${this.eventId}`)) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 }

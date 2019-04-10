@@ -12,8 +12,7 @@ import { Event } from 'src/app/models/event.model';
 export class EventFullComponent implements OnInit, OnDestroy {
   private _id: Number;
   private _subscription: any;
-  private _fetchEvent$: Observable<Event>
-    = this._eventDataService.event$;
+  private _fetchEvent$: Observable<Event>;
 
   constructor(private _eventDataService: EventDataService, private _route: ActivatedRoute) {
   }
@@ -23,6 +22,7 @@ export class EventFullComponent implements OnInit, OnDestroy {
       this._id = +params['id'];
     });
     this._eventDataService.eventId = this._id;
+    this._fetchEvent$ = this._eventDataService.event$;
   }
 
   ngOnDestroy() {
