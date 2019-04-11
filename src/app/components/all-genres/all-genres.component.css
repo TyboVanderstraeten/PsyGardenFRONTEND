@@ -1,0 +1,16 @@
+.addButton {
+  margin:15px;
+}
+
+.genreCards {
+  display: inline-block;
+  width: 15%;
+  margin: 15px;
+  text-align: center;
+}
+
+.loading {
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
