@@ -7,6 +7,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { EventFullComponent } from './components/event-full/event-full.component';
+import { AllGenresComponent } from './components/all-genres/all-genres.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'all-events', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'all-events/detail-page/:id', component: EventFullComponent },
   { path: 'europe-map/detail-page/:id', component: EventFullComponent },
+  { path: 'genres', component: AllGenresComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

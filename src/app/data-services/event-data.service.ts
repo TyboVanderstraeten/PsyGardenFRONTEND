@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Event } from 'src/app/models/event.model';
-import { Coordinates } from 'src/app/models/coordinates.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +20,7 @@ export class EventDataService {
     return this._http.get(`${environment.psyGardenApiUrl}/Events/`)
       .pipe(
         map(
-          (eventlistJSON: any[]): Event[] => eventlistJSON.map(Event.fromJSON)
+          (eventListJSON: any[]): Event[] => eventListJSON.map(Event.fromJSON)
         )
       );
   }

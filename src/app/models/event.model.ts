@@ -16,6 +16,7 @@ export class Event {
         private _prices: any[],
         private _resources: any[]
     ) { }
+
     get eventId(): Number { return this._eventId; }
     get name(): string { return this._name; }
     get description(): string { return this._description; }
@@ -33,7 +34,7 @@ export class Event {
     get resources(): any[] { return this._resources; }
 
     static fromJSON(json: any): Event {
-        const eventFromJSON = new Event(json.eventId,json.name, json.description, json.startDate, json.endDate,
+        const eventFromJSON = new Event(json.eventId, json.name, json.description, json.startDate, json.endDate,
             json.nrOfDays, json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.eventGenres, json.prices, json.resources
         );
         return eventFromJSON;

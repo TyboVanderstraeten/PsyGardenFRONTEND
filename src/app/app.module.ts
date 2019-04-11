@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
+import { AllGenresComponent } from './components/all-genres/all-genres.component';
+import { GenreComponent } from './components/genre/genre.component';
 
 
 
@@ -40,7 +42,9 @@ import { MatPasswordStrengthModule } from '@angular-material-extensions/password
     EventFullComponent,
     PageNotFoundComponent,
     RegisterFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AllGenresComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,
