@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Event } from 'src/app/models/event.model';
 import { Coordinates } from 'src/app/models/coordinates.model';
+import { google } from '@agm/core/services/google-maps-types';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class EventDataService {
     return this._http.get(`${environment.psyGardenApiUrl}/Events/`)
       .pipe(
         map(
-          (list: any[]): Event[] => list.map(Event.fromJSON)
+          (eventlistJSON: any[]): Event[] => eventlistJSON.map(Event.fromJSON)
         )
       );
   }
@@ -30,16 +31,17 @@ export class EventDataService {
     return this._http.get(`${environment.psyGardenApiUrl}/Events/${this.eventId}`)
       .pipe(
         map(
-          (event: any): Event => Event.fromJSON(event)
+          (eventJSON: any): Event => Event.fromJSON(eventJSON)
         )
       );
   }
 
   get coordinatesTest$(): Observable<Coordinates> {
-    return this._http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=Walgracht+13,+Deinze,+Oost-Vlaanderen,+&key=AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo`)
+    
+    return this._http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=Walgracht+23,+Deinze,+Oost-Vlaanderen,+Belgie+&key=AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo`)
       .pipe(
         map(
-          (coordinates: any): Coordinates => Coordinates.fromJSON(coordinates)
+          (coordinatesJSON: any): Coordinates => Coordinates.fromJSON(coordinatesJSON)
         )
       );
   }

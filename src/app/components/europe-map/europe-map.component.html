@@ -1,8 +1,6 @@
 <div *ngIf="(coordinates$ | async) as coordinates; else loading">
   <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="4">
-    <div *ngFor="let coordinate of coordinates">
-      <app-map-marker [latitude]="coordinate.latitude" [longitude]="coordinate.longitde"></app-map-marker>
-    </div>
+      <app-map-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude"></app-map-marker>
   </agm-map>
 </div>
 
