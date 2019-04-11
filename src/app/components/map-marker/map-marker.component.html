@@ -1,11 +1,10 @@
-<div>
-  <agm-marker [latitude]="latitude" [longitude]="longitude">
+<div *ngIf="(coordinates$ | async) as coordinates;">
+  <agm-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude">
     <agm-info-window>
       <mat-card class="card">
-        <mat-card-title>Test</mat-card-title>
-        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-title>Header</mat-card-title>
+        <mat-card-subtitle>subtitle</mat-card-subtitle>
         <mat-card-content>test adf
-          azdajedhzehfzeijufhzfiuzefhezuihfuiezhfueizfuizhfuiezhfuiezhfiuezhfuiezhfiuezhfiuzhfiuzefhiuzehfiuezhiu
         </mat-card-content>
         <mat-card-actions class="moreDetails"><a mat-button>More details</a></mat-card-actions>
       </mat-card>

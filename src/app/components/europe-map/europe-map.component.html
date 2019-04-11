@@ -1,6 +1,10 @@
-<div *ngIf="(coordinates$ | async) as coordinates; else loading">
+<div *ngIf="(events$ | async) as events; else loading">
   <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="4">
-      <app-map-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude"></app-map-marker>
+    <div *ngFor="let event of events">
+      <app-map-marker [street]="event.street" [streetNr]="event.streetNr"
+      [city]="event.city" [zipCode]="event.zipCode" [region]="event.region"
+      [country]="event.country"></app-map-marker>
+    </div>
   </agm-map>
 </div>
 
