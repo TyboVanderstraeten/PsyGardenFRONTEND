@@ -15,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'all-events/detail-page/:id', component: EventFullComponent },
+  { path: 'europe-map/detail-page/:id', component: EventFullComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

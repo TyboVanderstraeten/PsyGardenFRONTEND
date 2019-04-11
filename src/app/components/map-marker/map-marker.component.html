@@ -2,11 +2,11 @@
   <agm-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude">
     <agm-info-window>
       <mat-card class="card">
-        <mat-card-title>Header</mat-card-title>
+        <mat-card-title>{{event.name}}</mat-card-title>
         <mat-card-subtitle>subtitle</mat-card-subtitle>
         <mat-card-content>test adf
         </mat-card-content>
-        <mat-card-actions class="moreDetails"><a mat-button>More details</a></mat-card-actions>
+        <button mat-raised-button [routerLink]="['detail-page',event.eventId]">More details</button>
       </mat-card>
     </agm-info-window>
   </agm-marker>
