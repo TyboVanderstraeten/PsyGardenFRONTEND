@@ -17,11 +17,6 @@
     <div>
       <p>{{event.description}}</p>
     </div>
-    <h4>Location</h4>
-    <div>
-      <p>{{event.street}} {{event.streetNr}}, {{event.zipCode}} {{event.city.toUpperCase()}}</p>
-      <p>{{event.region}}, {{event.country}}</p>
-    </div>
     <h4>Genres</h4>
     <div *ngFor="let genre of event.genres">
       <a href="https://www.google.com/search?q={{genre.genre.name}}" class="genreLink"
@@ -37,6 +32,18 @@
         <p>{{resource.name}}: <a href="https://{{resource.url}}" class="resourceLink"
             target="_blank">{{resource.url}}</a></p>
       </section>
+    </div>
+    <h4>Location</h4>
+    <div>
+      <p>{{event.street}} {{event.streetNr}}, {{event.zipCode}} {{event.city.toUpperCase()}}</p>
+      <p>{{event.region}}, {{event.country}}</p>
+      <div class="mapCardDiv">
+        <mat-card class="mapCard">
+          <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="3">
+            <app-map-marker [event]="event"></app-map-marker>
+          </agm-map>
+        </mat-card>
+      </div>
     </div>
   </div>
 </div>

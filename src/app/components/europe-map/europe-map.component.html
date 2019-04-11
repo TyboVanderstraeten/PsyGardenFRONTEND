@@ -1,7 +1,7 @@
 <div *ngIf="(events$ | async) as events; else loading">
   <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="4">
     <div *ngFor="let event of events">
-      <app-map-marker [event]="event"></app-map-marker>
+      <app-map-marker [event]="event" [infowindow]="true"></app-map-marker>
     </div>
   </agm-map>
 </div>

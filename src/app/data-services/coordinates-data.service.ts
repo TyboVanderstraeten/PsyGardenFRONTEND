@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class CoordinatesDataService {
 
   public addressString: String;
-  public apiKeyString: String = 'key=DELETETHISAIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo';
+  public apiKeyString: String = 'key=AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo';
 
   constructor(private _http: HttpClient) { }
 

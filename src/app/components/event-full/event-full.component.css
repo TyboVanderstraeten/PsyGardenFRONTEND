@@ -5,14 +5,14 @@
 }
 
 .headerImage {
-  width: 750px;
+  width: 40%;
   border-radius: 10px;
 }
 
-.buttons button{
+.buttons button {
   margin-top: 10px;
   margin-right: 10px;
-  width:120px;
+  width: 120px;
 }
 
 
@@ -23,6 +23,22 @@
 
 .resourceLink {
   color: black;
+}
+
+.mapCardDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapCard {
+  width: 40%;
+  border-radius: 10px;
+}
+
+agm-map {
+  height: 400px;
+  width: 100%;
 }
 
 .loading {

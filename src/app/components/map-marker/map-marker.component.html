@@ -1,6 +1,6 @@
 <div *ngIf="(coordinates$ | async) as coordinates;">
   <agm-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude">
-    <agm-info-window>
+    <agm-info-window *ngIf="(infowindow)">
       <h2>{{event.name}}</h2>
       <p><strong>{{event.country}}</strong></p>
       <p>{{event.startDate | date:'dd/MM/yyyy'}} - {{event.endDate | date:'dd/MM/yyyy'}}</p>

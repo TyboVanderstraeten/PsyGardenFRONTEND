@@ -12,6 +12,7 @@ import { Event } from 'src/app/models/event.model';
 
 export class MapMarkerComponent implements OnInit {
   @Input() public event: Event;
+  @Input() public infowindow: Boolean = false;
 
   private _fetchCoordinates$: Observable<Coordinates>;
 
