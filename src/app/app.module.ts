@@ -53,7 +53,7 @@ import { MatPasswordStrengthModule } from '@angular-material-extensions/password
     HttpClientModule,
     //Google API-key configuration
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
+      apiKey: 'DELETETHISAIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
     }),
     AppRoutingModule,
     ReactiveFormsModule,
