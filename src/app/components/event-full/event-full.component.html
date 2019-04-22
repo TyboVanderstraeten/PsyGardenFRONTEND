@@ -27,11 +27,8 @@
       <p>{{price.name}}: {{price.cost|currency:'EUR'}} - {{price.description}}</p>
     </div>
     <h4>Links</h4>
-    <div *ngFor="let resource of event.resources">
-      <section *ngIf="!resource.alt">
-        <p>{{resource.name}}: <a href="https://{{resource.url}}" class="resourceLink"
-            target="_blank">{{resource.url}}</a></p>
-      </section>
+    <div *ngFor="let link of event.links">
+      <p>{{link.name}}: <a href="https://{{link.url}}" class="link" target="_blank">{{link.url}}</a></p>
     </div>
     <h4>Location</h4>
     <div>
