@@ -3,7 +3,7 @@
     <mat-card-title>{{event.name}} ({{event.country.toUpperCase()}})</mat-card-title>
     <mat-card-subtitle>Starting {{event.startDate | date:'dd/MM/yyyy'}} to {{event.endDate|date:'dd/MM/yyyy'}}
       ({{event.nrOfDays}} days)</mat-card-subtitle>
-    <img mat-card-image src="assets/img/festivalExample.jpg" class="headerImage" />
+    <img mat-card-image src="assets/img/{{event.eventId}}.jpg" class="headerImage" />
     <mat-card-content>
       <p>{{event.description}}</p>
     </mat-card-content>
