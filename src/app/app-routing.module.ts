@@ -13,8 +13,6 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'all-events', pathMatch: 'full' },
   { path: 'europe-map', component: EuropeMapComponent },
   { path: 'all-events', component: AllEventsComponent },
-  { path: 'register', component: RegisterFormComponent },
-  { path: 'login', component: LoginFormComponent },
   { path: 'all-events/detail-page/:id', component: EventFullComponent },
   { path: 'europe-map/detail-page/:id', component: EventFullComponent },
   { path: 'genres', component: AllGenresComponent },

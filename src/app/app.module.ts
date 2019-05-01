@@ -11,8 +11,6 @@ import { AllEventsComponent } from './components/all-events/all-events.component
 import { EventShortComponent } from './components/event-short/event-short.component';
 import { EventFullComponent } from './components/event-full/event-full.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
 
 
 //Modules
@@ -27,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { AllGenresComponent } from './components/all-genres/all-genres.component';
 import { GenreComponent } from './components/genre/genre.component';
+import { MaterialModule } from './modules/material/material.module';
+import { UserModule } from './modules/user/user.module';
 
 
 
@@ -41,8 +41,6 @@ import { GenreComponent } from './components/genre/genre.component';
     EventShortComponent,
     EventFullComponent,
     PageNotFoundComponent,
-    RegisterFormComponent,
-    LoginFormComponent,
     AllGenresComponent,
     GenreComponent
   ],
@@ -59,11 +57,13 @@ import { GenreComponent } from './components/genre/genre.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
     }),
-    AppRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatPasswordStrengthModule
+    MatPasswordStrengthModule,
+    MaterialModule,
+    UserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
