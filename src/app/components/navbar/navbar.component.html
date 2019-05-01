@@ -12,10 +12,16 @@
       <a [routerLink]="['all-events']">
         <img class="logo" src="assets/img/psygardenLogo.png" />
       </a>
-      <div class="buttons">
-        <a mat-button [routerLink]="['register']">Register</a>
-        <a mat-button [routerLink]="['login']">Login</a>
+      <div class="buttons" *ngIf="(loggedInUser$ | async) as user;else loggedOut">
+        <a mat-button>Welcome, {{user}}!</a>
+        <a mat-button (click)="logout()">Logout</a>
       </div>
+      <ng-template #loggedOut>
+        <div class="buttons">
+          <a mat-button [routerLink]="['register']">Register</a>
+          <a mat-button [routerLink]="['login']">Login</a>
+        </div>
+      </ng-template>
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
