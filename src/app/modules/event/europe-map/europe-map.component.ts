@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EventDataService } from 'src/app/data-services/event-data.service';
-import { Event } from 'src/app/models/event.model';
+import { EventDataService } from '../event-data.service';
+import { Event } from 'src/app/modules/event/event.model';
 
 @Component({
   selector: 'app-europe-map',
   templateUrl: './europe-map.component.html',
   styleUrls: ['./europe-map.component.css']
 })
-
 export class EuropeMapComponent implements OnInit {
   private _fetchEvents$: Observable<Event[]>
     = this._eventDataService.events$;
@@ -22,5 +21,4 @@ export class EuropeMapComponent implements OnInit {
   get events$(): Observable<Event[]> {
     return this._fetchEvents$;
   }
-
 }

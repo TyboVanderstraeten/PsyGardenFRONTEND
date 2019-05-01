@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Event } from 'src/app/models/event.model';
-//import { Country } from 'src/app/models/country.enum';
+import { Event } from 'src/app/modules/event/event.model';
 
 @Component({
   selector: 'app-event-short',

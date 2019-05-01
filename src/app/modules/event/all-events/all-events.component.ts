@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EventDataService } from 'src/app/data-services/event-data.service';
-import { Event } from 'src/app/models/event.model';
 import { Observable } from 'rxjs';
+import { EventDataService } from '../event-data.service';
+import { Event } from 'src/app/modules/event/event.model';
 
 @Component({
   selector: 'app-all-events',
@@ -21,5 +21,4 @@ export class AllEventsComponent implements OnInit {
   get events$(): Observable<Event[]> {
     return this._fetchEvents$;
   }
-
 }

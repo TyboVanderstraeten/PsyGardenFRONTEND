@@ -1,0 +1,20 @@
+.shortCard {
+    margin: 15px;
+  }
+  
+  .headerImage {
+    width: 750px;
+    padding: 15px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttons button{
+    margin-right: 10px;
+    width:140px;
+  }
+  

@@ -1,15 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EventDataService } from 'src/app/data-services/event-data.service';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Event } from 'src/app/models/event.model';
+import { EventDataService } from '../event-data.service';
+import { ActivatedRoute } from '@angular/router';
+import { Event } from 'src/app/modules/event/event.model';
 
 @Component({
   selector: 'app-event-full',
   templateUrl: './event-full.component.html',
   styleUrls: ['./event-full.component.css']
 })
-export class EventFullComponent implements OnInit, OnDestroy {
+export class EventFullComponent implements OnInit {
   private _id: Number;
   private _subscription: any;
   private _fetchEvent$: Observable<Event>;
@@ -33,5 +33,4 @@ export class EventFullComponent implements OnInit, OnDestroy {
   get event$(): Observable<Event> {
     return this._fetchEvent$;
   }
-
 }

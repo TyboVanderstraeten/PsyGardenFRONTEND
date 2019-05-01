@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Coordinates } from '../models/coordinates.model';
 import { map } from 'rxjs/operators';
+import { Coordinates } from './coordinates.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoordinatesDataService {
-
   public addressString: String;
   public apiKeyString: String = 'key=AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo';
 

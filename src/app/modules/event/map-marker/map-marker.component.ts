@@ -1,15 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CoordinatesDataService } from 'src/app/data-services/coordinates-data.service';
-import { Coordinates } from 'src/app/models/coordinates.model';
-import { Event } from 'src/app/models/event.model';
+import { CoordinatesDataService } from '../coordinates-data.service';
+import { Event } from 'src/app/modules/event/event.model';
+import{Coordinates} from 'src/app/modules/event/coordinates.model';
 
 @Component({
   selector: 'app-map-marker',
   templateUrl: './map-marker.component.html',
   styleUrls: ['./map-marker.component.css']
 })
-
 export class MapMarkerComponent implements OnInit {
   @Input() public event: Event;
   @Input() public infowindow: Boolean = false;
@@ -34,4 +33,5 @@ export class MapMarkerComponent implements OnInit {
   get coordinates$(): Observable<Coordinates> {
     return this._fetchCoordinates$;
   }
+
 }
