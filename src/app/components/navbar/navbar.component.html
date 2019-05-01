@@ -1,14 +1,17 @@
 <header>
   <mat-toolbar class="navbar">
     <mat-toolbar-row>
+      <!-- <audio controls autoplay preload="metadata" style=" width:300px;">
+        <source src="assets/music/AgnetonChildrenOfTheDemon.mp3" type="audio/mpeg">
+      </audio><br /> -->
       <div class="buttons">
         <a mat-button [routerLink]="['europe-map']">Map</a>
         <a mat-button [routerLink]="['all-events']">Events</a>
         <a mat-button [routerLink]="['genres']">Genres</a>
       </div>
-        <a [routerLink]="['all-events']">
-          <img class="logo" src="assets/img/psygardenLogo.png" />
-        </a>
+      <a [routerLink]="['all-events']">
+        <img class="logo" src="assets/img/psygardenLogo.png" />
+      </a>
       <div class="buttons">
         <a mat-button [routerLink]="['register']">Register</a>
         <a mat-button [routerLink]="['login']">Login</a>
