@@ -1,6 +1,12 @@
+.table,
+td,
+th {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
 .loading {
-    margin-left: 47%;
-    margin-top: 20%;
-    margin-bottom: 20%;
-  }
-  
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}

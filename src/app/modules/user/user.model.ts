@@ -7,8 +7,8 @@ export class User {
         private _lastname: string,
         private _email: string,
         private _isAdmin: boolean,
-        private _interests: any[],
-        private _goings: any[]
+        private _interests: Event[],
+        private _goings: Event[]
     ) { }
 
     get userId(): Number { return this._userId; }
@@ -21,7 +21,9 @@ export class User {
 
     static fromJSON(json: any): User {
         const userFromJSON = new User(json.userId, json.firstName, json.lastName,
-            json.email, json.isAdmin, json.interest, json.goings);
+            json.email, json.isAdmin,
+            json.interests.map((interestsJSON: any): Event => Event.fromJSON(interestsJSON.event)),
+            json.goings.map((goingsJSON: any): Event => Event.fromJSON(goingsJSON.event)));
         return userFromJSON;
     }
 }

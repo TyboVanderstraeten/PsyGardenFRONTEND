@@ -10,6 +10,24 @@
     </mat-toolbar>
     <br />
   </div>
+  <div>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Starts</th>
+        <th>Ends</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let event of user.interests">
+        <td>{{event.name}}</td>
+        <td>{{event.country}}</td>
+        <td>{{event.startDate | date:'dd/MM/yyyy'}}</td>
+        <td>{{event.endDate | date:'dd/MM/yyyy'}}</td>
+        <td><mat-icon>remove_circle</mat-icon></td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <ng-template #loading>
