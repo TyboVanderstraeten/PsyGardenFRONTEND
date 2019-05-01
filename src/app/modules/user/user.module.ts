@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile/:email', component: ProfileComponent },
-  { path: 'profile/interests', component: InterestsComponent },
-  { path: 'profile/goings', component: GoingsComponent }
+  { path: 'interests/:email', component: InterestsComponent },
+  { path: 'goings/:email', component: GoingsComponent }
 ];
 
 @NgModule({

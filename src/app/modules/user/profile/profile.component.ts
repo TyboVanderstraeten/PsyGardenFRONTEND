@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthenticationService } from '../authentication.service';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../user.model';
 import { UserDataService } from '../user-data.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',

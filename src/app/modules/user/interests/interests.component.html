@@ -1,3 +1,17 @@
-<p>
-  interests works!
-</p>
+<div *ngIf="(user$|async) as user;else loading">
+  <div>
+    <br />
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <a mat-button [routerLink]="['../../profile',user.email]">Profile</a>
+        <a mat-button [routerLink]="['../../interests',user.email]">Interests</a>
+        <a mat-button [routerLink]="['../../goings',user.email]">Goings</a>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <br />
+  </div>
+</div>
+
+<ng-template #loading>
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>
