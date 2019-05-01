@@ -20,10 +20,20 @@ export class User {
     get goings(): Event[] { return this._goings; }
 
     static fromJSON(json: any): User {
-        const userFromJSON = new User(json.userId, json.firstName, json.lastName,
-            json.email, json.isAdmin,
-            json.interests.map((interestsJSON: any): Event => Event.fromJSON(interestsJSON.event)),
-            json.goings.map((goingsJSON: any): Event => Event.fromJSON(goingsJSON.event)));
+        const userFromJSON =
+            new User(
+                json.userId,
+                json.firstName,
+                json.lastName,
+                json.email,
+                json.isAdmin,
+                json.interests.map(
+                    (interestsJSON: any): Event => Event.fromJSON(interestsJSON.event)
+                ),
+                json.goings.map(
+                    (goingsJSON: any): Event => Event.fromJSON(goingsJSON.event)
+                )
+            );
         return userFromJSON;
     }
 }
