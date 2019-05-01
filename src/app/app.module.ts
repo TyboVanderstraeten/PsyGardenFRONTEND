@@ -15,19 +15,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 //Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatIconModule } from '@angular/material/icon';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
-import { AllGenresComponent } from './components/all-genres/all-genres.component';
-import { GenreComponent } from './components/genre/genre.component';
 import { MaterialModule } from './modules/material/material.module';
 import { UserModule } from './modules/user/user.module';
 import { httpInterceptorProviders } from './interceptors';
+import { GenreModule } from './modules/genre/genre.module';
 
 
 
@@ -42,29 +36,19 @@ import { httpInterceptorProviders } from './interceptors';
     EventShortComponent,
     EventFullComponent,
     PageNotFoundComponent,
-    AllGenresComponent,
-    GenreComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
     HttpClientModule,
     //Google API-key configuration
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
     }),
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatPasswordStrengthModule,
     MaterialModule,
     UserModule,
-    AppRoutingModule,
+    GenreModule,
+    AppRoutingModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
