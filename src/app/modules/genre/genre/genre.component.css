@@ -1,0 +1,15 @@
+.h2 {
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttons button {
+    margin-right: 10px;
+    width: 40%;
+  }
+  
