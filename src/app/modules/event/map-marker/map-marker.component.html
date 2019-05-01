@@ -5,7 +5,7 @@
       <p><strong>{{event.country}}</strong></p>
       <p>{{event.startDate | date:'dd/MM/yyyy'}} - {{event.endDate | date:'dd/MM/yyyy'}}</p>
       <p>{{event.description}}</p>
-      <button mat-button [routerLink]="['detail-page',event.eventId]" class="moreDetails">More details</button>
+      <button mat-button [routerLink]="['../all-events/detail-page',event.eventId]" class="moreDetails">More details</button>
     </agm-info-window>
   </agm-marker>
 </div>
