@@ -94,7 +94,7 @@ export class AuthenticationService {
 
   checkEmailAvailability = (email: string): Observable<boolean> => {
     return this.http.get<boolean>(
-      `${environment.psyGardenApiUrl}/Accounts/checkUsername`,
+      `${environment.psyGardenApiUrl}/Accounts/checkemail`,
       { params: { email } }
     );
   };

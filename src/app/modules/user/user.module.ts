@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +18,6 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     RouterModule.forChild(routes)
   ]

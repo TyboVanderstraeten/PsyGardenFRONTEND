@@ -27,6 +27,7 @@ import { AllGenresComponent } from './components/all-genres/all-genres.component
 import { GenreComponent } from './components/genre/genre.component';
 import { MaterialModule } from './modules/material/material.module';
 import { UserModule } from './modules/user/user.module';
+import { httpInterceptorProviders } from './interceptors';
 
 
 
@@ -65,7 +66,7 @@ import { UserModule } from './modules/user/user.module';
     UserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 
