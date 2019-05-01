@@ -1,0 +1,14 @@
+<div *ngIf="(user$|async) as user;else loading">
+  <br />
+  <mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="['../../profile',user.email]">Profile</a>
+      <a mat-button>Interests</a>
+      <a mat-button>Goings</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<ng-template #loading>
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>

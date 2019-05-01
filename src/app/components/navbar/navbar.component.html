@@ -13,7 +13,7 @@
         <img class="logo" src="assets/img/psygardenLogo.png" />
       </a>
       <div class="buttons" *ngIf="(loggedInUser$ | async) as user;else loggedOut">
-        <a mat-button>Welcome, {{user}}!</a>
+        <a mat-button [routerLink]="['profile',user]">Welcome, {{user}}!</a>
         <a mat-button (click)="logout()">Logout</a>
       </div>
       <ng-template #loggedOut>

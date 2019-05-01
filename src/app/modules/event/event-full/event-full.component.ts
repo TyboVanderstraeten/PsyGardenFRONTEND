@@ -14,7 +14,9 @@ export class EventFullComponent implements OnInit {
   private _subscription: any;
   private _fetchEvent$: Observable<Event>;
 
-  constructor(private _eventDataService: EventDataService, private _route: ActivatedRoute) {
+  constructor(
+    private _eventDataService: EventDataService,
+    private _route: ActivatedRoute) {
   }
 
   ngOnInit() {
