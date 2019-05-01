@@ -7,15 +7,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { InterestsComponent } from './interests/interests.component';
+import { GoingsComponent } from './goings/goings.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile/:email', component: ProfileComponent }
+  { path: 'profile/:email', component: ProfileComponent },
+  { path: 'profile/interests', component: InterestsComponent },
+  { path: 'profile/goings', component: GoingsComponent }
 ];
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ProfileComponent],
+  declarations: [LoginComponent, RegisterComponent, ProfileComponent, InterestsComponent, GoingsComponent],
   imports: [
     CommonModule,
     MaterialModule,

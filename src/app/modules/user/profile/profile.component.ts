@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../user.model';
@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   private _email: string;
   private _subscription: any;
   private _fetchUser$: Observable<User>;
-  
+
   constructor(
     private _userDataService: UserDataService,
     private _route: ActivatedRoute) { }
@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnDestroy() {
     this._subscription.unsubscribe();
+    this._userDataService.userEmail = null;
     this._userDataService.userEmail = null;
   }
 
