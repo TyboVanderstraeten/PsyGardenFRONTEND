@@ -36,4 +36,16 @@ export class InterestsComponent implements OnInit {
     return this._fetchUser$;
   }
 
+  // addToInterested(){
+  //   this._userDataService.addToInterested();
+  // }
+
+  // removeFromInterested(){
+  //   this._userDataService.removeFromInterested().subscribe(()=>console.log("removed from interested"));
+  // }
+
+  // addToGoing(){
+  //   this._userDataService.addToGoing();
+  // }
+
 }

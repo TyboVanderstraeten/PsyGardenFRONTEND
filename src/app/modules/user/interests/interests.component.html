@@ -24,7 +24,13 @@
         <td>{{event.country}}</td>
         <td>{{event.startDate | date:'dd/MM/yyyy'}}</td>
         <td>{{event.endDate | date:'dd/MM/yyyy'}}</td>
-        <td><mat-icon>remove_circle</mat-icon></td>
+        <td>
+          <span>
+            <!-- <mat-icon>remove_circle</mat-icon> -->
+            <a mat-button>Add to going</a>
+            <a mat-button>Remove from interested</a>
+          </span>
+        </td>
       </tr>
     </table>
   </div>
