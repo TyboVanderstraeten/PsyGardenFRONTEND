@@ -10,13 +10,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { InterestsComponent } from './interests/interests.component';
 import { GoingsComponent } from './goings/goings.component';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'interests', component: InterestsComponent },
-  { path: 'goings', component: GoingsComponent }
+  { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent },
+  { path: 'interests', canActivate: [AuthGuard], component: InterestsComponent },
+  { path: 'goings', canActivate: [AuthGuard], component: GoingsComponent }
 ];
 
 @NgModule({

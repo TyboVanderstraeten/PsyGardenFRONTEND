@@ -8,12 +8,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import { EditGenreComponent } from './edit-genre/edit-genre.component';
 import { RemoveGenreComponent } from './remove-genre/remove-genre.component';
+import { AuthGuard } from '../user/auth.guard';
 
 const routes: Routes = [
   { path: 'genres', component: AllGenresComponent },
-  { path: 'add-genre', component: AddGenreComponent },
-  { path: 'edit-genre/:id', component: EditGenreComponent },
-  { path: 'remove-genre/:id', component: RemoveGenreComponent }
+  { path: 'add-genre', canActivate: [AuthGuard], component: AddGenreComponent },
+  { path: 'edit-genre/:id', canActivate: [AuthGuard], component: EditGenreComponent },
+  { path: 'remove-genre/:id', canActivate: [AuthGuard], component: RemoveGenreComponent }
 ];
 
 @NgModule({

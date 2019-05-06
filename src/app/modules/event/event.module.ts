@@ -12,14 +12,15 @@ import { MapMarkerComponent } from './map-marker/map-marker.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { RemoveEventComponent } from './remove-event/remove-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
+import { AuthGuard } from '../user/auth.guard';
 
 const routes: Routes = [
   { path: 'europe-map', component: EuropeMapComponent },
   { path: 'all-events', component: AllEventsComponent },
   { path: 'all-events/detail-page/:id', component: EventFullComponent },
-  { path: 'add-event', component: AddEventComponent },
-  { path: 'remove-event/:id', component: RemoveEventComponent },
-  { path: 'edit-event/:id', component: EditEventComponent }
+  { path: 'add-event', canActivate: [AuthGuard], component: AddEventComponent },
+  { path: 'remove-event/:id', canActivate: [AuthGuard], component: RemoveEventComponent },
+  { path: 'edit-event/:id', canActivate: [AuthGuard], component: EditEventComponent }
 ];
 
 @NgModule({
