@@ -1,12 +1,12 @@
 export class Event {
     private _eventId: Number;
+    private _nrOfDays: Number;
 
     constructor(
         private _name: string,
         private _description: string,
         private _startDate: Date,
         private _endDate: Date,
-        private _nrOfDays: Number,
         private _country: string,
         private _region: string,
         private _city: string,
@@ -38,9 +38,10 @@ export class Event {
 
     static fromJSON(json: any): Event {
         const eventFromJSON = new Event(json.name, json.description, json.startDate, json.endDate,
-            json.nrOfDays, json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.eventGenres,
+            json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.eventGenres,
             json.prices, json.links, json.headerImageURL);
         eventFromJSON._eventId = json.eventId;
+        eventFromJSON._nrOfDays = json.nrOfDays;
         return eventFromJSON;
     }
 
