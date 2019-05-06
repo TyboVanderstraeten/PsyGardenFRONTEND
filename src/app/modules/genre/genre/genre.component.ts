@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Genre } from '../genre.model';
-import { GenreDataService } from '../genre-data.service';
+
 
 @Component({
   selector: 'app-genre',
@@ -10,15 +10,9 @@ import { GenreDataService } from '../genre-data.service';
 export class GenreComponent implements OnInit {
   @Input() public genre: Genre;
 
-  constructor(private _genreDataService: GenreDataService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  removeGenre(genreId: Number) {
-    this._genreDataService.removeGenre(genreId)
-      .subscribe();
-    window.location.reload();
   }
 
 }

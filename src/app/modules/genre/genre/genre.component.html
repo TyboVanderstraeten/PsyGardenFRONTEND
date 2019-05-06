@@ -4,6 +4,6 @@
   </mat-card-header>
   <div class="buttons">
     <button mat-raised-button [routerLink]="['../edit-genre',genre.genreId]">Edit</button>
-    <button mat-raised-button (click)="removeGenre(genre.genreId)">Remove</button>
+    <button mat-raised-button [routerLink]="['../remove-genre',genre.genreId]">Remove</button>
   </div>
 </mat-card>
