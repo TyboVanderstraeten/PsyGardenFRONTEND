@@ -21,12 +21,4 @@ export class AllGenresComponent implements OnInit {
   get genres$(): Observable<Genre[]> {
     return this._fetchGenres$;
   }
-
-  addNewGenre() {
-    var name = prompt("Enter name:");
-    this._genreDataService.addNewGenre(new Genre(name))
-      .subscribe();
-      window.location.reload();
-  }
-
 }

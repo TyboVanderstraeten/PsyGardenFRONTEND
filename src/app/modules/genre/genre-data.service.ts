@@ -30,8 +30,13 @@ export class GenreDataService {
       );
   }
 
-  editGenre(genreId: Number, genre: Genre): Observable<any> {
-    return this._http.put(`${environment.psyGardenApiUrl}/Genres/${genreId}`, genre.toJSON());
+  editGenre(genreId: Number, genre: Genre): Observable<Genre> {
+    return this._http.put(`${environment.psyGardenApiUrl}/Genres/${genreId}`, genre.toJSON())
+      .pipe(
+        map(
+          (genreJSON: any): Genre => Genre.fromJSON(genreJSON)
+        )
+      );
   }
 
   removeGenre(genreId: Number): Observable<Genre> {
