@@ -26,6 +26,7 @@ export class AllGenresComponent implements OnInit {
     var name = prompt("Enter name:");
     this._genreDataService.addNewGenre(new Genre(name))
       .subscribe();
+      window.location.reload();
   }
 
 }

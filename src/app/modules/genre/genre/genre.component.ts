@@ -18,6 +18,7 @@ export class GenreComponent implements OnInit {
   removeGenre(genreId: Number) {
     this._genreDataService.removeGenre(genreId)
       .subscribe();
+    window.location.reload();
   }
 
 }

@@ -29,11 +29,13 @@ export class GoingsComponent implements OnInit {
   addToInterested(eventId: Number) {
     this._userDataService.addToInterested(eventId)
       .subscribe();
+    window.location.reload();
   }
 
   removeFromGoing(eventId: Number) {
     this._userDataService.removeFromGoing(eventId)
       .subscribe();
+    window.location.reload();
   }
 
 }

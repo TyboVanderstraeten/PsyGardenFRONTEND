@@ -29,10 +29,12 @@ export class InterestsComponent implements OnInit {
   addToGoing(eventId: Number) {
     this._userDataService.addToGoing(eventId)
       .subscribe();
+    window.location.reload();
   }
 
   removeFromInterested(eventId: Number) {
     this._userDataService.removeFromInterested(eventId)
       .subscribe();
+    window.location.reload();
   }
 }
