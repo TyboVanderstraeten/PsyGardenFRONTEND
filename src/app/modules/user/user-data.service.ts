@@ -36,12 +36,13 @@ export class UserDataService {
   //   )
   // }
 
-  // addToGoing() {
-  //   this._http.post(
-  //     `${environment.psyGardenApiUrl}/Users/going`,
-  //     { email: this.userEmail, eventId: 2 }
-  //   );
-  // }
+  addToGoing(eventId: Number) {
+    this._http.post(
+      `${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@','%40')}?eventId=${eventId}`,
+      {}
+    );
+    // console.log(`${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@','%40')}?eventId=${eventId}`);
+  }
 
   // removeFromGoing() {
 

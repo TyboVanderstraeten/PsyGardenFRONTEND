@@ -20,4 +20,22 @@ export class GenreDataService {
         )
       );
   }
+
+  addNewGenre(genre: Genre): Observable<Genre> {
+    return this._http.post(`${environment.psyGardenApiUrl}/Genres/`, genre.toJSON())
+      .pipe(
+        map(
+          (genreJSON: any): Genre => Genre.fromJSON(genreJSON)
+        )
+      );
+  }
+
+  removeGenre(genreId: Number): Observable<Genre> {
+    return this._http.delete(`${environment.psyGardenApiUrl}/Genres/${genreId}`)
+      .pipe(
+        map(
+          (genreJSON: any): Genre => Genre.fromJSON(genreJSON)
+        )
+      );
+  }
 }

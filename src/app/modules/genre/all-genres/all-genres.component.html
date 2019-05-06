@@ -1,4 +1,5 @@
 <div *ngIf="(genres$ | async) as genres; else loading">
+  <button mat-raised-button (click)="addNewGenre()">Add genre</button><br />
   <div *ngFor="let genre of genres" class="genreCards">
     <app-genre [genre]="genre"></app-genre>
   </div>

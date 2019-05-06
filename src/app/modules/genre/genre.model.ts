@@ -1,6 +1,7 @@
 export class Genre {
+    private _genreId: Number;
+
     constructor(
-        private _genreId: Number,
         private _name: string
     ) { }
 
@@ -8,7 +9,14 @@ export class Genre {
     get name(): string { return this._name; }
 
     static fromJSON(json: any): Genre {
-        const genreFromJSON = new Genre(json.genreId,json.name);
+        const genreFromJSON = new Genre(json.name);
+        genreFromJSON._genreId = json.genreId;
         return genreFromJSON;
+    }
+
+    toJSON(): any {
+        return {
+            name: this.name
+        };
     }
 }
