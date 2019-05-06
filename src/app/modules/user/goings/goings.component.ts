@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../user.model';
 import { UserDataService } from '../user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-goings',
@@ -12,7 +13,8 @@ export class GoingsComponent implements OnInit {
   private _fetchUser$: Observable<User>;
 
   constructor(
-    private _userDataService: UserDataService
+    private _userDataService: UserDataService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -28,14 +30,19 @@ export class GoingsComponent implements OnInit {
 
   addToInterested(eventId: Number) {
     this._userDataService.addToInterested(eventId)
-      .subscribe();
-    window.location.reload();
+      .subscribe((response) => {
+        if (response) {
+          this._router.navigate(['goings']);
+        }
+      });
   }
 
   removeFromGoing(eventId: Number) {
     this._userDataService.removeFromGoing(eventId)
-      .subscribe();
-    window.location.reload();
+      .subscribe((response) => {
+        if (response) {
+          this._router.navigate(['goings']);
+        }
+      });
   }
-
 }
