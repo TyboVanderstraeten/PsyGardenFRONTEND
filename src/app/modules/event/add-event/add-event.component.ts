@@ -48,10 +48,7 @@ export class AddEventComponent implements OnInit {
         this._event.value.headerImageURL,
         [], [], []
       )
-    ).subscribe((response) => {
-      console.log("Event added" + response.name);
-    }
-    );
+    ).subscribe();
   }
 
 }
