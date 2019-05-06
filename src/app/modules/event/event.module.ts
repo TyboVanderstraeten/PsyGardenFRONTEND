@@ -30,7 +30,7 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     AgmCoreModule.forRoot({
-      apiKey: environment.psyGardenApiUrl
+      apiKey: environment.googleApiKey
     }),
     ReactiveFormsModule,
     RouterModule.forChild(routes)
