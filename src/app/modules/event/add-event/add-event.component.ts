@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { EventDataService } from '../event-data.service';
 import { Event } from 'src/app/modules/event/event.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-event',
@@ -10,26 +11,51 @@ import { Event } from 'src/app/modules/event/event.model';
 })
 export class AddEventComponent implements OnInit {
   private _event: FormGroup;
+  private _errorMessage: string;
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _eventDataService: EventDataService
+    private _eventDataService: EventDataService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
     this._event = this._formBuilder.group({
-      name: [''],
-      description: [''],
-      startDate: [''],
-      endDate: [''],
-      country: [''],
-      region: [''],
-      city: [''],
-      street: [''],
-      streetNr: [''],
-      zipCode: [''],
-      headerImageURL: ['']
+      name: ['', [Validators.required, Validators.maxLength(50)]],
+      description: ['', [Validators.required]],
+      dateGroup: this._formBuilder.group({
+        startDate: ['', [Validators.required]],
+        endDate: ['', [Validators.required]],
+      }, { validators: this.checkDates }),
+      country: ['', [Validators.required, Validators.maxLength(100)]],
+      region: ['', [Validators.maxLength(100)]],
+      city: ['', [Validators.required, Validators.maxLength(100)]],
+      street: ['', [Validators.required, Validators.maxLength(100)]],
+      streetNr: ['', [Validators.maxLength(10)]],
+      zipCode: ['', [Validators.required, Validators.maxLength(10)]],
+      headerImageURL: ['', [Validators.required]]
     });
+  }
+
+  checkDates(control: AbstractControl): { [key: string]: any } {
+    const startDate = control.get('startDate');
+    const endDate = control.get('endDate');
+    return (startDate.value < new Date() || endDate.value < new Date() || endDate.value < startDate.value) ? null : { datesNotValid: true };
+  }
+
+  getErrorMessage(errors: any) {
+    if (!errors) {
+      return null;
+    }
+    if (errors.required) {
+      return 'is required';
+    } else if (errors.minlength) {
+      return `needs at least ${errors.minlength.requiredLength} characters (got ${errors.minlength.actualLength})`;
+    } else if (errors.maxLength) {
+      return `can have max. ${errors.maxLength.requiredLength} characters (got ${errors.maxLength.actualLength})`;
+    } else if (errors.datesNotValid) {
+      return 'dates are not valid'
+    }
   }
 
   onSubmit() {
@@ -37,8 +63,8 @@ export class AddEventComponent implements OnInit {
       new Event(
         this._event.value.name,
         this._event.value.description,
-        this._event.value.startDate,
-        this._event.value.endDate,
+        this._event.value.dateGroup.startDate,
+        this._event.value.dateGroup.endDate,
         this._event.value.country,
         this._event.value.region,
         this._event.value.city,
@@ -48,7 +74,13 @@ export class AddEventComponent implements OnInit {
         this._event.value.headerImageURL,
         [], [], []
       )
-    ).subscribe();
+    ).subscribe((response) => {
+      if (response) {
+        this._router.navigate(['all-events']);
+      } else {
+        this._errorMessage = 'Could not add event';
+      }
+    });
   }
 
 }

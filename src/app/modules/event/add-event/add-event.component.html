@@ -7,62 +7,101 @@
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
             <input matInput aria-label="Name" type="text" formControlName="name" required />
+            <mat-error *ngIf="_event.get('name')['errors'] && _event.get('name').touched">
+              {{getErrorMessage(_event.get('name')['errors'])}}
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
             <input matInput aria-label="Description" type="text" formControlName="description" required />
+            <mat-error *ngIf="_event.get('description')['errors'] && _event.get('description').touched">
+              {{getErrorMessage(_event.get('description')['errors'])}}
+            </mat-error>
           </mat-form-field>
         </p>
-        <p>
+        <p formGroupName="dateGroup">
           <mat-form-field appearance="outline">
             <mat-label>Start date</mat-label>
             <input matInput aria-label="StartDate" type="datetime-local" formControlName="startDate" required />
+            <mat-error
+              *ngIf="_event.get('dateGroup').get('startDate')['errors'] && _event.get('dateGroup').get('startDate').touched">
+              {{getErrorMessage(_event.get('dateGroup').get('startDate')['errors'])}}
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>End date</mat-label>
             <input matInput aria-label="EndDate" type="datetime-local" formControlName="endDate" required />
+            <mat-error
+              *ngIf="_event.get('dateGroup').get('endDate')['errors'] && _event.get('dateGroup').get('endDate').touched">
+              {{getErrorMessage(_event.get('dateGroup').get('endDate')['errors'])}}
+            </mat-error>
           </mat-form-field>
+          <mat-error
+            *ngIf="_event.get('dateGroup').errors && _event.get('dateGroup').get('startDate').touched && _event.get('dateGroup').get('endDate').touched">
+            {{getErrorMessage(_event.get('dateGroup').errors)}}
+          </mat-error>
         </p>
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Street</mat-label>
             <input matInput aria-label="Street" type="text" formControlName="street" required />
+            <mat-error *ngIf="_event.get('street')['errors'] && _event.get('street').touched">
+              {{getErrorMessage(_event.get('street')['errors'])}}
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Street nr</mat-label>
-            <input matInput aria-label="StreetNr" type="text" formControlName="streetNr" required />
+            <input matInput aria-label="StreetNr" type="text" formControlName="streetNr" />
+            <mat-error *ngIf="_event.get('streetNr')['errors'] && _event.get('streetNr').touched">
+              {{getErrorMessage(_event.get('streetNr')['errors'])}}
+            </mat-error>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Zipcode</mat-label>
             <input matInput aria-label="ZipCode" type="text" formControlName="zipCode" required />
+            <mat-error *ngIf="_event.get('zipCode')['errors'] && _event.get('zipCode').touched">
+              {{getErrorMessage(_event.get('zipCode')['errors'])}}
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>City</mat-label>
             <input matInput aria-label="City" type="text" formControlName="city" required />
+            <mat-error *ngIf="_event.get('city')['errors'] && _event.get('city').touched">
+              {{getErrorMessage(_event.get('city')['errors'])}}
+            </mat-error>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Region</mat-label>
-            <input matInput aria-label="Region" type="text" formControlName="region" required />
+            <input matInput aria-label="Region" type="text" formControlName="region" />
+            <mat-error *ngIf="_event.get('region')['errors'] && _event.get('region').touched">
+              {{getErrorMessage(_event.get('region')['errors'])}}
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Country</mat-label>
             <input matInput aria-label="Country" type="text" formControlName="country" required />
+            <mat-error *ngIf="_event.get('country')['errors'] && _event.get('country').touched">
+              {{getErrorMessage(_event.get('country')['errors'])}}
+            </mat-error>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Image URL</mat-label>
             <input matInput aria-label="HeaderImageURL" type="text" formControlName="headerImageURL" required />
+            <mat-error *ngIf="_event.get('headerImageURL')['errors'] && _event.get('headerImageURL').touched">
+              {{getErrorMessage(_event.get('headerImageURL')['errors'])}}
+            </mat-error>
           </mat-form-field>
         </p>
         <p>
-            <button type="submit" mat-raised-button [disabled]="">Create event</button>
-            <button mat-raised-button>Cancel</button>
-          </p>
+          <button type="submit" mat-raised-button [disabled]="">Create event</button>
+          <button mat-raised-button>Cancel</button>
+        </p>
       </form>
     </mat-card-content>
   </mat-card>
