@@ -3,7 +3,7 @@
     <mat-card-title>Are you sure you want to remove this genre?</mat-card-title>
     <p>
       <button mat-raised-button (click)="onSubmit()">Yes</button>
-      <button mat-raised-button>No</button>
+      <button mat-raised-button [routerLink]="['../../genres']">No</button>
     </p>
   </mat-card>
 </div>
