@@ -1,4 +1,5 @@
 <div *ngIf="(events$ | async) as events; else loading">
+    <button mat-raised-button [routerLink]="['add-event']">Add event</button><br />
   <div *ngFor="let event of events" class="shortCards">
     <app-event-short [event]="event"></app-event-short>
   </div>
