@@ -13,6 +13,7 @@ import { AddEventComponent } from './add-event/add-event.component';
 import { RemoveEventComponent } from './remove-event/remove-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { AuthGuard } from '../user/auth.guard';
+import { environment } from 'src/environments/environment.prod';
 
 const routes: Routes = [
   { path: 'europe-map', component: EuropeMapComponent },
@@ -29,7 +30,7 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBxI2mg6yieter_1y-tj5SY4s9sbHjhARo'
+      apiKey: environment.psyGardenApiUrl
     }),
     ReactiveFormsModule,
     RouterModule.forChild(routes)
