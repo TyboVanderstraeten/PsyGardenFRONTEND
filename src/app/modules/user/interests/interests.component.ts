@@ -36,6 +36,11 @@ export class InterestsComponent implements OnInit {
     return this._fetchUser$;
   }
 
+  addToGoing(eventId: Number) {
+    this._userDataService.addToGoing(eventId)
+      .subscribe();
+  }
+
   removeFromInterested(eventId: Number) {
     this._userDataService.removeFromInterested(eventId)
       .subscribe();

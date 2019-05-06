@@ -22,28 +22,24 @@ export class UserDataService {
       );
   }
 
-  // addToInterested(eventId: Number) {
-  //   return this._http.post(`${environment.psyGardenApiUrl}/Users/interested/`,
-  //     { email: this.userEmail, eventId: eventId }
-  //   );
-  // }
+  addToInterested(eventId: Number): Observable<any> {
+    return this._http.post(`${environment.psyGardenApiUrl}/Users/interested/${this.userEmail}?eventId=${eventId}`,
+      {}
+    );
+  }
 
-
-
-  // addToGoing(eventId: Number) {
-  //   this._http.post(
-  //     `${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@', '%40')}?eventId=${eventId}`,
-  //     {}
-  //   );
-  //   console.log(`${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@', '%40')}?eventId=${eventId}`);
-  // }
+  addToGoing(eventId: Number): Observable<any> {
+    return this._http.post(`${environment.psyGardenApiUrl}/Users/going/${this.userEmail}?eventId=${eventId}`,
+      {}
+    );
+  }
 
   removeFromInterested(eventId: Number): Observable<any> {
     return this._http.delete(
       `${environment.psyGardenApiUrl}/Users/interested/${this.userEmail}?eventId=${eventId}`
     );
   }
-  
+
   removeFromGoing(eventId: Number): Observable<any> {
     return this._http.delete(
       `${environment.psyGardenApiUrl}/Users/going/${this.userEmail}?eventId=${eventId}`
