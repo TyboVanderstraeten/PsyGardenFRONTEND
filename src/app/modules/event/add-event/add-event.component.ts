@@ -26,7 +26,7 @@ export class AddEventComponent implements OnInit {
       dateGroup: this._formBuilder.group({
         startDate: ['', [Validators.required]],
         endDate: ['', [Validators.required]],
-      }, { validators: this.checkDates }),
+      }, { validators: [this.checkDates, this.checkStartDate, this.checkEndDate] }),
       country: ['', [Validators.required, Validators.maxLength(100)]],
       region: ['', [Validators.maxLength(100)]],
       city: ['', [Validators.required, Validators.maxLength(100)]],
@@ -40,7 +40,20 @@ export class AddEventComponent implements OnInit {
   checkDates(control: AbstractControl): { [key: string]: any } {
     const startDate = control.get('startDate');
     const endDate = control.get('endDate');
-    return (startDate.value < new Date() || endDate.value < new Date() || endDate.value < startDate.value) ? null : { datesNotValid: true };
+    return startDate.value <= endDate.value ? null : { datesNotValid: true };
+  }
+
+  checkStartDate(control: AbstractControl): { [key: string]: any } {
+    const startDate = control.get('startDate');
+    const today = new Date().toISOString();
+    return today <= startDate.value ? null : { startDateInPast: true };
+
+  }
+
+  checkEndDate(control: AbstractControl): { [key: string]: any } {
+    const endDate = control.get('endDate');
+    const today = new Date().toISOString();
+    return today <= endDate.value ? null : { endDateInPast: true };
   }
 
   getErrorMessage(errors: any) {
@@ -53,6 +66,10 @@ export class AddEventComponent implements OnInit {
       return `needs at least ${errors.minlength.requiredLength} characters (got ${errors.minlength.actualLength})`;
     } else if (errors.maxLength) {
       return `can have max. ${errors.maxLength.requiredLength} characters (got ${errors.maxLength.actualLength})`;
+    } else if (errors.startDateInPast) {
+      return 'start date is in the past';
+    } else if (errors.endDateInPast) {
+      return 'end date is in the past';
     } else if (errors.datesNotValid) {
       return 'dates are not valid'
     }
