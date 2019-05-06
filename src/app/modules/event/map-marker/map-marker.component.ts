@@ -21,7 +21,7 @@ export class MapMarkerComponent implements OnInit {
 
   ngOnInit() {
     this._coordinatesDataService.addressString
-      = `address=${this.event.street}+${this.event.streetNr}+${this.event.city}+
+      = `${this.event.street}+${this.event.streetNr}+${this.event.city}+
       ${this.event.zipCode}+${this.event.region}+${this.event.country}`;
     this._fetchCoordinates$ = this._coordinatesDataService.coordinates$;
   }
