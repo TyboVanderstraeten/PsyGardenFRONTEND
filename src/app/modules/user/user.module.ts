@@ -13,9 +13,9 @@ import { GoingsComponent } from './goings/goings.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile/', component: ProfileComponent },
-  { path: 'interests/', component: InterestsComponent },
-  { path: 'goings/', component: GoingsComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'interests', component: InterestsComponent },
+  { path: 'goings', component: GoingsComponent }
 ];
 
 @NgModule({
