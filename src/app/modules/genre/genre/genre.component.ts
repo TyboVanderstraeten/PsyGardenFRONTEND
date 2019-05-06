@@ -15,6 +15,13 @@ export class GenreComponent implements OnInit {
   ngOnInit() {
   }
 
+  editGenre(genreId: Number) {
+    var name = prompt("Enter name:");
+    this._genreDataService.editGenre(genreId, new Genre(name))
+      .subscribe();
+    window.location.reload();
+  }
+
   removeGenre(genreId: Number) {
     this._genreDataService.removeGenre(genreId)
       .subscribe();

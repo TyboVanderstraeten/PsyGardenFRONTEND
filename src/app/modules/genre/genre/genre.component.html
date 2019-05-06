@@ -3,7 +3,7 @@
     <h2>{{genre.name}}</h2>
   </mat-card-header>
   <div class="buttons">
-    <button mat-raised-button>Edit</button>
+    <button mat-raised-button (click)="editGenre(genre.genreId)">Edit</button>
     <button mat-raised-button (click)="removeGenre(genre.genreId)">Remove</button>
   </div>
 </mat-card>
