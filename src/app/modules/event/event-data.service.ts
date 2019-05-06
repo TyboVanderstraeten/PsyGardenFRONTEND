@@ -30,4 +30,22 @@ export class EventDataService {
         )
       );
   }
+
+  addNewEvent(event: Event): Observable<Event> {
+    return this._http.post(`${environment.psyGardenApiUrl}/Events/`, event.toJSON())
+      .pipe(
+        map(
+          (eventJSON: any): Event => Event.fromJSON(eventJSON)
+        )
+      );
+  }
+
+  removeEvent(eventId: Number): Observable<Event> {
+    return this._http.delete(`${environment.psyGardenApiUrl}/Events/${eventId}`)
+      .pipe(
+        map(
+          (eventJSON: any): Event => Event.fromJSON(eventJSON)
+        )
+      );
+  }
 }

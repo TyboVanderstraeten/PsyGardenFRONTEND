@@ -38,13 +38,20 @@ export class EventFullComponent implements OnInit {
     return this._fetchEvent$;
   }
 
+  removeEvent(eventId: Number) {
+    this._eventDataService.removeEvent(eventId)
+      .subscribe();
+  }
+
   addToInterested(eventId: Number) {
     this._userDataService.addToInterested(eventId)
       .subscribe();
+    window.location.reload();
   }
 
   addToGoing(eventId: Number) {
     this._userDataService.addToGoing(eventId)
       .subscribe();
+    window.location.reload();
   }
 }
