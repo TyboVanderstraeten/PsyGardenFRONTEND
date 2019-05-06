@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthenticationService {
   private readonly _tokenKey = 'currentUser';
+  private readonly _emailKey = 'currentUserEmail';
   private _user$: BehaviorSubject<string>;
 
   public redirectUrl: string;
@@ -19,6 +20,7 @@ export class AuthenticationService {
       const expires = new Date(parseInt(parsedToken.exp, 10) * 1000) < new Date();
       if (expires) {
         localStorage.removeItem(this._tokenKey);
+        localStorage.removeItem(this._emailKey);
         parsedToken = null;
       }
     }
@@ -52,6 +54,7 @@ export class AuthenticationService {
       map((token: any) => {
         if (token) {
           localStorage.setItem(this._tokenKey, token);
+          localStorage.setItem(this._emailKey, email);
           this._user$.next(email);
           return true;
         } else {
@@ -76,6 +79,7 @@ export class AuthenticationService {
       map((token: any) => {
         if (token) {
           localStorage.setItem(this._tokenKey, token);
+          localStorage.setItem(this._emailKey, email);
           this._user$.next(email);
           return true;
         } else {
@@ -88,6 +92,7 @@ export class AuthenticationService {
   logout() {
     if (this._user$.getValue()) {
       localStorage.removeItem('currentUser');
+      localStorage.removeItem('currentUserEmail');
       this._user$.next(null);
     }
   }
