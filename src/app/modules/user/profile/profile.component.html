@@ -1,15 +1,10 @@
+<div>
+  <br />
+  <app-navbar-user></app-navbar-user>
+  <br />
+</div>
+
 <div *ngIf="(user$|async) as user;else loading">
-  <div>
-    <br />
-    <mat-toolbar>
-      <mat-toolbar-row>
-        <a mat-button [routerLink]="['../profile']">Profile</a>
-        <a mat-button [routerLink]="['../interests']">Interests</a>
-        <a mat-button [routerLink]="['../goings']">Goings</a>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <br />
-  </div>
   <div style="text-align:center;">
     <div>
       <h1>{{user.firstname}} {{user.lastname}}</h1>

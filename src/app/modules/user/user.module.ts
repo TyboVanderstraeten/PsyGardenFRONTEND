@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { InterestsComponent } from './interests/interests.component';
 import { GoingsComponent } from './goings/goings.component';
+import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ProfileComponent, InterestsComponent, GoingsComponent],
+  declarations: [LoginComponent, RegisterComponent, ProfileComponent, InterestsComponent, GoingsComponent, NavbarUserComponent],
   imports: [
     CommonModule,
     MaterialModule,
