@@ -36,4 +36,9 @@ export class GoingsComponent implements OnInit {
     return this._fetchUser$;
   }
 
+  removeFromGoing(eventId: Number) {
+    this._userDataService.removeFromGoing(eventId)
+      .subscribe();
+  }
+
 }

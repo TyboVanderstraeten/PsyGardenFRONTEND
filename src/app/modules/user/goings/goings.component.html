@@ -28,7 +28,7 @@
           <span>
             <!-- <mat-icon>remove_circle</mat-icon> -->
             <a mat-button>Add to interested</a>
-            <a mat-button>Remove from going</a>
+            <a mat-button (click)="removeFromGoing(event.eventId)">Remove from going</a>
           </span>
         </td>
       </tr>

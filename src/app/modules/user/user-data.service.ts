@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { User } from './user.model';
 import { Observable } from 'rxjs';
-import { errorHandler } from '@angular/platform-browser/src/browser';
 
 @Injectable({
   providedIn: 'root'
@@ -23,28 +22,31 @@ export class UserDataService {
       );
   }
 
-  // addToInterested() {
-  //   this._http.post(
-  //     `${environment.psyGardenApiUrl}/Users/interested`,
-  //     { email: this.userEmail, eventId: 2 }
+  // addToInterested(eventId: Number) {
+  //   return this._http.post(`${environment.psyGardenApiUrl}/Users/interested/`,
+  //     { email: this.userEmail, eventId: eventId }
   //   );
   // }
 
-  // removeFromInterested():Observable<any> {
-  //   this._http.delete(
-  //     `${environment.psyGardenApiUrl}/Users/interested/${this.userEmail}?eventId=2`
-  //   )
+
+
+  // addToGoing(eventId: Number) {
+  //   this._http.post(
+  //     `${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@', '%40')}?eventId=${eventId}`,
+  //     {}
+  //   );
+  //   console.log(`${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@', '%40')}?eventId=${eventId}`);
   // }
 
-  addToGoing(eventId: Number) {
-    this._http.post(
-      `${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@','%40')}?eventId=${eventId}`,
-      {}
+  removeFromInterested(eventId: Number): Observable<any> {
+    return this._http.delete(
+      `${environment.psyGardenApiUrl}/Users/interested/${this.userEmail}?eventId=${eventId}`
     );
-    // console.log(`${environment.psyGardenApiUrl}/Users/going/${this.userEmail.replace('@','%40')}?eventId=${eventId}`);
   }
-
-  // removeFromGoing() {
-
-  // }
+  
+  removeFromGoing(eventId: Number): Observable<any> {
+    return this._http.delete(
+      `${environment.psyGardenApiUrl}/Users/going/${this.userEmail}?eventId=${eventId}`
+    );
+  }
 }
