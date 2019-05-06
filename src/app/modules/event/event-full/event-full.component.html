@@ -7,7 +7,7 @@
       <h5>Starts: {{event.startDate|date:'dd/MM/yyyy hh:mm a'}} | Ends: {{event.endDate|date:'dd/MM/yyyy hh:mm a'}}</h5>
     </div>
     <div>
-      <img src="assets/img/{{event.eventId}}.jpg" class="headerImage" />
+      <img src="{{event.headerImageURL}}" class="headerImage" />
     </div>
     <div class="buttons">
       <button mat-raised-button (click)="addToInterested(event.eventId)">Add to interested</button>
