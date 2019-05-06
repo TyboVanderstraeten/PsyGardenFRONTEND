@@ -14,8 +14,8 @@
       <button mat-raised-button (click)="addToGoing(event.eventId)">Add to going</button>
     </div>
     <div class="buttons">
-      <button mat-raised-button (click)="removeEvent(event.eventId)">Remove</button>
-      <button mat-raised-button>Edit</button>
+      <button mat-raised-button [routerLink]="['../../../remove-event',event.eventId]">Remove</button>
+      <button mat-raised-button [routerLink]="['../../../edit-event',event.eventId]">Edit</button>
     </div>
     <h4>Description</h4>
     <div>

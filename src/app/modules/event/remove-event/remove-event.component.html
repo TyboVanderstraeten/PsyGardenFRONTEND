@@ -1,3 +1,9 @@
-<p>
-  remove-event works!
-</p>
+<div class="removeEvent">
+  <mat-card>
+    <mat-card-title>Are you sure you want to remove this event?</mat-card-title>
+    <p>
+      <button mat-raised-button (click)="onSubmit()">Yes</button>
+      <button mat-raised-button [routerLink]="['../../all-events/detail-page',this._id]">No</button>
+    </p>
+  </mat-card>
+</div>

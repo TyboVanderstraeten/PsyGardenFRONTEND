@@ -17,7 +17,9 @@ const routes: Routes = [
   { path: 'europe-map', component: EuropeMapComponent },
   { path: 'all-events', component: AllEventsComponent },
   { path: 'all-events/detail-page/:id', component: EventFullComponent },
-  { path: 'add-event', component: AddEventComponent }
+  { path: 'add-event', component: AddEventComponent },
+  { path: 'remove-event/:id', component: RemoveEventComponent },
+  { path: 'edit-event/:id', component: EditEventComponent }
 ];
 
 @NgModule({

@@ -38,8 +38,8 @@ export class Event {
 
     static fromJSON(json: any): Event {
         const eventFromJSON = new Event(json.name, json.description, json.startDate, json.endDate,
-            json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.eventGenres,
-            json.prices, json.links, json.headerImageURL);
+            json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.headerImageURL, json.eventGenres,
+            json.prices, json.links);
         eventFromJSON._eventId = json.eventId;
         eventFromJSON._nrOfDays = json.nrOfDays;
         return eventFromJSON;
