@@ -40,6 +40,15 @@ export class EventDataService {
       );
   }
 
+  editEvent(eventId: Number, event: Event): Observable<Event> {
+    return this._http.put(`${environment.psyGardenApiUrl}/Events/${eventId}`, event.toJSON())
+      .pipe(
+        map(
+          (eventJSON: any): Event => Event.fromJSON(eventJSON)
+        )
+      );
+  }
+
   removeEvent(eventId: Number): Observable<Event> {
     return this._http.delete(`${environment.psyGardenApiUrl}/Events/${eventId}`)
       .pipe(

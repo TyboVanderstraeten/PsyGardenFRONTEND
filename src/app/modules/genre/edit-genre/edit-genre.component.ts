@@ -62,5 +62,4 @@ export class EditGenreComponent implements OnInit {
       }
     })
   }
-
 }
