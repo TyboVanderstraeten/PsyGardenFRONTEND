@@ -10,8 +10,8 @@
       <img src="assets/img/{{event.eventId}}.jpg" class="headerImage" />
     </div>
     <div class="buttons">
-      <button mat-raised-button>Interested</button>
-      <button mat-raised-button>Going</button>
+        <button mat-raised-button (click)="addToInterested(event.eventId)">Add to interested</button>
+        <button mat-raised-button (click)="addToGoing(event.eventId)">Add to going</button>
     </div>
     <h4>Description</h4>
     <div>

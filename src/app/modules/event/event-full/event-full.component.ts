@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { EventDataService } from '../event-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Event } from 'src/app/modules/event/event.model';
+import { UserDataService } from '../../user/user-data.service';
 
 @Component({
   selector: 'app-event-full',
@@ -16,7 +17,8 @@ export class EventFullComponent implements OnInit {
 
   constructor(
     private _eventDataService: EventDataService,
-    private _route: ActivatedRoute) {
+    private _route: ActivatedRoute,
+    private _userDataService: UserDataService) {
   }
 
   ngOnInit() {
@@ -34,5 +36,15 @@ export class EventFullComponent implements OnInit {
 
   get event$(): Observable<Event> {
     return this._fetchEvent$;
+  }
+
+  addToInterested(eventId: Number) {
+    this._userDataService.addToInterested(eventId)
+      .subscribe();
+  }
+
+  addToGoing(eventId: Number) {
+    this._userDataService.addToGoing(eventId)
+      .subscribe();
   }
 }

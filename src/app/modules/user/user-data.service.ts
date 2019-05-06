@@ -9,12 +9,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserDataService {
-  public userEmail: string;
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {
+  }
 
   get user$(): Observable<User> {
-    return this._http.get(`${environment.psyGardenApiUrl}/Users/${this.userEmail}`)
+    var userEmail = localStorage.getItem('currentUserEmail');
+    return this._http.get(`${environment.psyGardenApiUrl}/Users/${userEmail}`)
       .pipe(
         map(
           (userJSON: any): User => User.fromJSON(userJSON)
@@ -23,26 +24,30 @@ export class UserDataService {
   }
 
   addToInterested(eventId: Number): Observable<any> {
-    return this._http.post(`${environment.psyGardenApiUrl}/Users/interested/${this.userEmail}?eventId=${eventId}`,
+    var userEmail = localStorage.getItem('currentUserEmail');
+    return this._http.post(`${environment.psyGardenApiUrl}/Users/interested/${userEmail}?eventId=${eventId}`,
       {}
     );
   }
 
   addToGoing(eventId: Number): Observable<any> {
-    return this._http.post(`${environment.psyGardenApiUrl}/Users/going/${this.userEmail}?eventId=${eventId}`,
+    var userEmail = localStorage.getItem('currentUserEmail');
+    return this._http.post(`${environment.psyGardenApiUrl}/Users/going/${userEmail}?eventId=${eventId}`,
       {}
     );
   }
 
   removeFromInterested(eventId: Number): Observable<any> {
+    var userEmail = localStorage.getItem('currentUserEmail');
     return this._http.delete(
-      `${environment.psyGardenApiUrl}/Users/interested/${this.userEmail}?eventId=${eventId}`
+      `${environment.psyGardenApiUrl}/Users/interested/${userEmail}?eventId=${eventId}`
     );
   }
 
   removeFromGoing(eventId: Number): Observable<any> {
+    var userEmail = localStorage.getItem('currentUserEmail');
     return this._http.delete(
-      `${environment.psyGardenApiUrl}/Users/going/${this.userEmail}?eventId=${eventId}`
+      `${environment.psyGardenApiUrl}/Users/going/${userEmail}?eventId=${eventId}`
     );
   }
 }
