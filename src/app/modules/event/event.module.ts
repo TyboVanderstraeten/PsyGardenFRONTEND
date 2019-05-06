@@ -10,6 +10,8 @@ import { EventShortComponent } from './event-short/event-short.component';
 import { EuropeMapComponent } from './europe-map/europe-map.component';
 import { MapMarkerComponent } from './map-marker/map-marker.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { RemoveEventComponent } from './remove-event/remove-event.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 const routes: Routes = [
   { path: 'europe-map', component: EuropeMapComponent },
@@ -19,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AllEventsComponent, EventFullComponent, EventShortComponent, EuropeMapComponent, MapMarkerComponent, AddEventComponent],
+  declarations: [AllEventsComponent, EventFullComponent, EventShortComponent, EuropeMapComponent, MapMarkerComponent, AddEventComponent, RemoveEventComponent, EditEventComponent],
   imports: [
     CommonModule,
     MaterialModule,
