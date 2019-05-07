@@ -99,7 +99,7 @@
           </mat-form-field>
         </p>
         <p>
-          <button type="submit" mat-raised-button [disabled]="">Save</button>
+          <button type="submit" mat-raised-button [disabled]="!_event.valid">Save</button>
           <button mat-raised-button [routerLink]="['../../all-events']">Cancel</button>
         </p>
       </form>

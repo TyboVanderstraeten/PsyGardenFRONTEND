@@ -13,7 +13,7 @@
           </mat-form-field>
         </p>
         <p>
-          <button type="submit" mat-raised-button [disabled]="">Create genre</button>
+          <button type="submit" mat-raised-button [disabled]="!_genre.valid">Create genre</button>
           <button mat-raised-button [routerLink]="['../genres']">Cancel</button>
         </p>
       </form>
