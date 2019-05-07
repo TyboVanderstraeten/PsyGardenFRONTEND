@@ -1,4 +1,4 @@
-export class Genre {
+export class EventGenre {
 
     constructor(
         private _genreId: Number
@@ -6,8 +6,8 @@ export class Genre {
 
     get genreId(): Number { return this._genreId; }
 
-    static fromJSON(json: any): Genre {
-        const genreFromJSON = new Genre(json.genreId);
+    static fromJSON(json: any): EventGenre {
+        const genreFromJSON = new EventGenre(json.genreId);
         return genreFromJSON;
     }
 

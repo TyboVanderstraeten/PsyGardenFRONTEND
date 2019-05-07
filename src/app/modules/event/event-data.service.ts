@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Event } from 'src/app/modules/event/event.model';
 import { Link } from './link.model';
 import { Price } from './price.model';
+import { EventGenre } from './eventgenre.model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,15 @@ export class EventDataService {
 
   addNewEvent(event: Event): Observable<Event> {
     return this._http.post(`${environment.psyGardenApiUrl}/Events/`, event.toJSON())
+      .pipe(
+        map(
+          (eventJSON: any): Event => Event.fromJSON(eventJSON)
+        )
+      );
+  }
+
+  addGenreToEvent(eventId: Number, genre: EventGenre): Observable<Event> {
+    return this._http.post(`${environment.psyGardenApiUrl}/Events/${eventId}/genre`, genre.toJSON())
       .pipe(
         map(
           (eventJSON: any): Event => Event.fromJSON(eventJSON)

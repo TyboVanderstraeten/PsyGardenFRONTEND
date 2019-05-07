@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EventDataService } from '../../event-data.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { EventGenre } from '../../eventgenre.model';
+import { GenreDataService } from 'src/app/modules/genre/genre-data.service';
+import { Observable } from 'rxjs';
+import { Genre } from 'src/app/modules/genre/genre.model';
 
 @Component({
   selector: 'app-add-genre',
@@ -6,10 +13,62 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-genre.component.css']
 })
 export class AddGenreComponent implements OnInit {
+  private _id: Number;
+  private _subscription: any;
+  private _genre: FormGroup;
+  private _errorMessage: string;
 
-  constructor() { }
+  private _fetchGenres$: Observable<Genre[]>
+    = this._genreDataService.genres$;
+
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _eventDataService: EventDataService,
+    private _genreDataService: GenreDataService,
+    private _router: Router,
+    private _route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this._subscription = this._route.params.subscribe(params => {
+      this._id = +params['id'];
+    });
+    this._genre = this._formBuilder.group({
+      genreId: ['', [Validators.required]]
+    });
   }
+
+  ngOnDestroy() {
+    this._subscription.unsubscribe();
+    this._id = 0;
+  }
+
+  get genres$(): Observable<Genre[]> {
+    return this._fetchGenres$;
+  }
+
+  getErrorMessage(errors: any) {
+    if (!errors) {
+      return null;
+    }
+    if (errors.required) {
+      return 'is required';
+    }
+  }
+
+  onSubmit() {
+    this._eventDataService.addGenreToEvent(
+      this._id,
+      new EventGenre(
+        this._genre.value.genreId
+      )
+    ).subscribe((response) => {
+      if (response) {
+        this._router.navigate([`all-events`]);
+      } else {
+        this._errorMessage = 'Could not add genre';
+      }
+    });
+    }
 
 }

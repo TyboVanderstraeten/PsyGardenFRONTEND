@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'add-event', canActivate: [AuthGuard], component: AddEventComponent },
   { path: 'add-event/:id/add-link', canActivate: [AuthGuard], component: AddLinkComponent },
   { path: 'add-event/:id/add-price', canActivate: [AuthGuard], component: AddPriceComponent },
+  { path: 'add-event/:id/add-genre', canActivate: [AuthGuard], component: AddGenreComponent },
   { path: 'remove-event/:id', canActivate: [AuthGuard], component: RemoveEventComponent },
   { path: 'edit-event/:id', canActivate: [AuthGuard], component: EditEventComponent }
 ];
@@ -35,7 +36,8 @@ const routes: Routes = [
     EventShortComponent, EuropeMapComponent,
     MapMarkerComponent, AddEventComponent,
     RemoveEventComponent, EditEventComponent,
-    AddLinkComponent, AddPriceComponent, AddGenreComponent
+    AddLinkComponent, AddPriceComponent,
+    AddGenreComponent
   ],
   imports: [
     CommonModule,
