@@ -1,9 +1,9 @@
-<div class="removeGenre">
+<div class="genreForm">
   <mat-card>
     <mat-card-title>Are you sure you want to remove this genre?</mat-card-title>
-    <p>
+    <mat-card-actions>
       <button mat-raised-button (click)="onSubmit()">Yes</button>
       <button mat-raised-button [routerLink]="['../../genres']">No</button>
-    </p>
+    </mat-card-actions>
   </mat-card>
 </div>
