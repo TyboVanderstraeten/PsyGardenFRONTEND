@@ -9,6 +9,7 @@
     <table class="table">
       <tr>
         <th>Name</th>
+        <th>Days left</th>
         <th>Country</th>
         <th>Starts</th>
         <th>Ends</th>
@@ -16,6 +17,7 @@
       </tr>
       <tr *ngFor="let event of user.interests">
         <td>{{event.name}}</td>
+        <td>{{event.calculateDaysLeft()}}</td>
         <td>{{event.country}}</td>
         <td>{{event.startDate | date:'dd/MM/yyyy'}}</td>
         <td>{{event.endDate | date:'dd/MM/yyyy'}}</td>

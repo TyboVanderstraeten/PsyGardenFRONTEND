@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,10 @@ export class AuthenticationService {
 
   public redirectUrl: string;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private _router: Router
+  ) {
     let parsedToken = this.parseJWT(localStorage.getItem(this._tokenKey));
     if (parsedToken) {
       const expires = new Date(parseInt(parsedToken.exp, 10) * 1000) < new Date();
@@ -94,6 +98,7 @@ export class AuthenticationService {
       localStorage.removeItem('currentUser');
       localStorage.removeItem('currentUserEmail');
       this._user$.next(null);
+      this._router.navigate(['']);
     }
   }
 

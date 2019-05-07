@@ -36,6 +36,19 @@ export class Event {
     get prices(): any[] { return this._prices; }
     get links(): any[] { return this._links; }
 
+    calculateDaysLeft(): Number {
+        var oneDay = 1000 * 60 * 60 * 24;
+        var startDate_ms = this.parseDate(this.startDate).getTime();
+        var today_ms = new Date().getTime();
+        var difference_ms = Math.abs(startDate_ms - today_ms);
+        return Math.round(difference_ms / oneDay);
+    }
+
+    private parseDate(date) {
+        var parts = date.match(/(\d+)/g);
+        return new Date(parts[0], parts[1] - 1, parts[2]);
+    }
+
     static fromJSON(json: any): Event {
         const eventFromJSON = new Event(json.name, json.description, json.startDate, json.endDate,
             json.country, json.region, json.city, json.street, json.streetNr, json.zipCode, json.headerImageURL, json.eventGenres,
@@ -63,4 +76,5 @@ export class Event {
             links: []
         }
     }
+
 }

@@ -32,6 +32,7 @@ export class EventFullComponent implements OnInit {
   ngOnDestroy() {
     this._subscription.unsubscribe();
     this._eventDataService.eventId = 0;
+    this._fetchEvent$ = null;
   }
 
   get event$(): Observable<Event> {
@@ -46,12 +47,17 @@ export class EventFullComponent implements OnInit {
   addToInterested(eventId: Number) {
     this._userDataService.addToInterested(eventId)
       .subscribe();
-    window.location.reload();
+      this.reloadComponent();
   }
 
   addToGoing(eventId: Number) {
     this._userDataService.addToGoing(eventId)
       .subscribe();
-    window.location.reload();
+      this.reloadComponent();
+  }
+
+  reloadComponent(){
+    this.ngOnDestroy();
+    this.ngOnInit();
   }
 }

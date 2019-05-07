@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
 import { Observable } from 'rxjs';
 import { UserDataService } from '../user-data.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-interests',
@@ -14,7 +13,6 @@ export class InterestsComponent implements OnInit {
 
   constructor(
     private _userDataService: UserDataService,
-    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -22,6 +20,7 @@ export class InterestsComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this._fetchUser$ = null;
   }
 
   get user$(): Observable<User> {
@@ -32,7 +31,9 @@ export class InterestsComponent implements OnInit {
     this._userDataService.addToGoing(eventId)
       .subscribe((response) => {
         if (response) {
-          this._router.navigate(['interests']);
+          //this._router.navigate(['interests']);
+          //window.location.href='interests';
+          this.reloadComponent();
         }
       });
   }
@@ -41,8 +42,15 @@ export class InterestsComponent implements OnInit {
     this._userDataService.removeFromInterested(eventId)
       .subscribe((response) => {
         if (response) {
-          this._router.navigate(['interests']);
+          //this._router.navigate(['interests']);
+          //window.location.href='interests';
+          this.reloadComponent();
         }
       });
+  }
+
+  reloadComponent() {
+    this.ngOnDestroy();
+    this.ngOnInit();
   }
 }
