@@ -16,6 +16,7 @@ import { AuthGuard } from '../user/auth.guard';
 import { environment } from 'src/environments/environment.prod';
 import { AddLinkComponent } from './add-event/add-link/add-link.component';
 import { AddPriceComponent } from './add-event/add-price/add-price.component';
+import { AddGenreComponent } from './add-event/add-genre/add-genre.component';
 
 const routes: Routes = [
   { path: 'europe-map', component: EuropeMapComponent },
@@ -34,7 +35,7 @@ const routes: Routes = [
     EventShortComponent, EuropeMapComponent,
     MapMarkerComponent, AddEventComponent,
     RemoveEventComponent, EditEventComponent,
-    AddLinkComponent, AddPriceComponent
+    AddLinkComponent, AddPriceComponent, AddGenreComponent
   ],
   imports: [
     CommonModule,
