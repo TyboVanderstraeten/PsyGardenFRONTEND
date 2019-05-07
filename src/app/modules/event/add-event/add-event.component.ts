@@ -93,7 +93,7 @@ export class AddEventComponent implements OnInit {
       )
     ).subscribe((response) => {
       if (response) {
-        this._router.navigate(['all-events']);
+        this._router.navigate([`add-event/${response.eventId}/add-link`]);
       } else {
         this._errorMessage = 'Could not add event';
       }

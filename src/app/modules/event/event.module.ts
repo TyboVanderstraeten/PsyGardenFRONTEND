@@ -14,18 +14,20 @@ import { RemoveEventComponent } from './remove-event/remove-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
 import { AuthGuard } from '../user/auth.guard';
 import { environment } from 'src/environments/environment.prod';
+import { AddLinkComponent } from './add-event/add-link/add-link.component';
 
 const routes: Routes = [
   { path: 'europe-map', component: EuropeMapComponent },
   { path: 'all-events', component: AllEventsComponent },
   { path: 'all-events/detail-page/:id', component: EventFullComponent },
   { path: 'add-event', canActivate: [AuthGuard], component: AddEventComponent },
+  { path: 'add-event/:id/add-link', canActivate: [AuthGuard], component: AddLinkComponent },
   { path: 'remove-event/:id', canActivate: [AuthGuard], component: RemoveEventComponent },
   { path: 'edit-event/:id', canActivate: [AuthGuard], component: EditEventComponent }
 ];
 
 @NgModule({
-  declarations: [AllEventsComponent, EventFullComponent, EventShortComponent, EuropeMapComponent, MapMarkerComponent, AddEventComponent, RemoveEventComponent, EditEventComponent],
+  declarations: [AllEventsComponent, EventFullComponent, EventShortComponent, EuropeMapComponent, MapMarkerComponent, AddEventComponent, RemoveEventComponent, EditEventComponent, AddLinkComponent],
   imports: [
     CommonModule,
     MaterialModule,
