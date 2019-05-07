@@ -64,7 +64,7 @@ export class AddGenreComponent implements OnInit {
       )
     ).subscribe((response) => {
       if (response) {
-        this._router.navigate([`all-events`]);
+        this._router.navigate([`add-event/${response.eventId}/add-price`]);
       } else {
         this._errorMessage = 'Could not add genre';
       }
