@@ -56,7 +56,7 @@ export class AddGenreComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(actionType: string) {
     this._eventDataService.addGenreToEvent(
       this._id,
       new EventGenre(
@@ -64,11 +64,15 @@ export class AddGenreComponent implements OnInit {
       )
     ).subscribe((response) => {
       if (response) {
-        this._router.navigate([`add-event/${response.eventId}/add-price`]);
+        if (actionType === "Next") {
+          this._router.navigate([`add-event/${response.eventId}/add-price`]);
+        }else if(actionType==="Another"){
+          this._router.navigate([`add-event/${response.eventId}/add-genre`]);
+        }
       } else {
         this._errorMessage = 'Could not add genre';
       }
     });
-    }
+  }
 
 }

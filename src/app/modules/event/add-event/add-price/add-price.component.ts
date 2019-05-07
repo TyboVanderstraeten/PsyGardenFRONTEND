@@ -53,7 +53,7 @@ export class AddPriceComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(actionType: string) {
     this._eventDataService.addPriceToEvent(
       this._id,
       new Price(
@@ -63,7 +63,11 @@ export class AddPriceComponent implements OnInit {
       )
     ).subscribe((response) => {
       if (response) {
-        this._router.navigate([`add-event/${response.eventId}/add-link`]);
+        if (actionType === "Next") {
+          this._router.navigate([`add-event/${response.eventId}/add-link`]);
+        }else if(actionType==="Another"){
+          this._router.navigate([`add-event/${response.eventId}/add-price`]);
+        }
       } else {
         this._errorMessage = 'Could not add price';
       }

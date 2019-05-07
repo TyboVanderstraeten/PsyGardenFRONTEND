@@ -2,14 +2,16 @@
   <mat-card>
     <mat-card-title>Add genre</mat-card-title>
     <mat-card-content>
-      <form [formGroup]="_genre" (ngSubmit)="onSubmit()">
+      <form [formGroup]="_genre" (ngSubmit)="onSubmit(actionType)">
         <p>
           <mat-select formControlName="genreId">
             <mat-option *ngFor="let genre of genres$ | async" value="{{genre.genreId}}">{{genre.name}}</mat-option>
           </mat-select>
         </p>
         <mat-card-actions>
-          <button type="submit" mat-raised-button [disabled]="!_genre.valid">Add genre</button>
+          <button type="submit" (click)="onSubmit('Another')" mat-raised-button [disabled]="!_genre.valid">Add another
+            genre</button>
+          <button type="submit" (click)="onSubmit('Next')" mat-raised-button [disabled]="!_genre.valid">Next</button>
           <button mat-raised-button [routerLink]="['../../../all-events']">Cancel</button>
         </mat-card-actions>
       </form>

@@ -50,7 +50,7 @@ export class AddLinkComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(actionType: string) {
     this._eventDataService.addLinkToEvent(
       this._id, new Link(
         this._link.value.name,
@@ -58,7 +58,11 @@ export class AddLinkComponent implements OnInit {
       )
     ).subscribe((response) => {
       if (response) {
-        this._router.navigate(['all-events']);
+        if (actionType === "Next") {
+          this._router.navigate(['all-events']);
+        } else if (actionType === "Another") {
+          this._router.navigate([`add-event/${response.eventId}/add-link`]);
+        }
       } else {
         this._errorMessage = 'Could not add link';
       }
