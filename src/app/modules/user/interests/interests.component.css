@@ -1,9 +1,17 @@
-.table,
-td,
-th {
-  border: 2px solid black;
+table {
+  margin: 0 auto;
+  width: 70%;
+  border-left: 1px solid #e0e0e0;
   border-collapse: collapse;
 }
+
+td,
+th {
+  width: (70%/6);
+  border-left: 1px solid #e0e0e0;
+  border-collapse: collapse;
+}
+
 
 .loading {
   margin-left: 47%;

@@ -13,6 +13,8 @@ import {
   MatProgressSpinnerModule,
   MatToolbarModule,
   MatSidenavModule,
+  MatSortModule,
+  MatTableModule
 } from '@angular/material';
 import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -36,6 +38,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatSortModule,
+    MatTableModule,
     MatPasswordStrengthModule
   ],
   exports: [
@@ -53,6 +57,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatSortModule,
+    MatTableModule,
     MatPasswordStrengthModule
   ]
 })
