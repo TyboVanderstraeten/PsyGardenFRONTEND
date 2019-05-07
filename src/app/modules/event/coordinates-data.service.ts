@@ -15,7 +15,7 @@ export class CoordinatesDataService {
   }
 
   get coordinates$(): Observable<Coordinates> {
-    return this._http.get(`https://maps.googleaDELETEpis.com/maps/api/geocode/json?address=${this.addressString}+&key=${environment.googleApiKey}`)
+    return this._http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.addressString}+&key=${environment.googleApiKey}`)
       .pipe(
         map(
           (coordinatesJSON: any): Coordinates => Coordinates.fromJSON(coordinatesJSON)
