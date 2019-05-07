@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { map } from 'rxjs/operators';
 import { Event } from 'src/app/modules/event/event.model';
+import { Link } from './link.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,15 @@ export class EventDataService {
 
   addNewEvent(event: Event): Observable<Event> {
     return this._http.post(`${environment.psyGardenApiUrl}/Events/`, event.toJSON())
+      .pipe(
+        map(
+          (eventJSON: any): Event => Event.fromJSON(eventJSON)
+        )
+      );
+  }
+
+  addLinkToEvent(eventId: Number, link: Link): Observable<Event> {
+    return this._http.post(`${environment.psyGardenApiUrl}/Events/${eventId}/link`, link.toJSON())
       .pipe(
         map(
           (eventJSON: any): Event => Event.fromJSON(eventJSON)
