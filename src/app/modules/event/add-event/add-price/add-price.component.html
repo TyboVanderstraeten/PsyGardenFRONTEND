@@ -1,0 +1,37 @@
+<div class="priceForm">
+  <mat-card>
+    <mat-card-title>Add price</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="_price" (ngSubmit)="onSubmit()">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput aria-label="Name" type="text" formControlName="name" required />
+            <mat-error *ngIf="_price.get('name')['errors'] && _price.get('name').touched">
+              {{getErrorMessage(_price.get('name')['errors'])}}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput aria-label="Description" type="text" formControlName="description" required />
+            <mat-error *ngIf="_price.get('description')['errors'] && _price.get('description').touched">
+              {{getErrorMessage(_price.get('description')['errors'])}}
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Cost</mat-label>
+            <input matInput aria-label="Cost" type="text" formControlName="cost" required />
+            <mat-error *ngIf="_price.get('cost')['errors'] && _price.get('cost').touched">
+              {{getErrorMessage(_price.get('cost')['errors'])}}
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <mat-card-actions>
+          <button type="submit" mat-raised-button [disabled]="!_price.valid">Add price</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

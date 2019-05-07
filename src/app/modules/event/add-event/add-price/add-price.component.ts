@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EventDataService } from '../../event-data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Link } from '../../link.model';
+import { Price } from '../../price.model';
 
 @Component({
-  selector: 'app-add-link',
-  templateUrl: './add-link.component.html',
-  styleUrls: ['./add-link.component.css']
+  selector: 'app-add-price',
+  templateUrl: './add-price.component.html',
+  styleUrls: ['./add-price.component.css']
 })
-export class AddLinkComponent implements OnInit {
+export class AddPriceComponent implements OnInit {
   private _id: Number;
   private _subscription: any;
-  private _link: FormGroup;
+  private _price: FormGroup;
   private _errorMessage: string;
 
   constructor(
@@ -26,9 +26,10 @@ export class AddLinkComponent implements OnInit {
     this._subscription = this._route.params.subscribe(params => {
       this._id = +params['id'];
     });
-    this._link = this._formBuilder.group({
+    this._price = this._formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
-      url: ['', Validators.required]
+      description: ['', [Validators.required]],
+      cost: ['', [Validators.required, Validators.max(5000)]]
     });
   }
 
@@ -47,22 +48,25 @@ export class AddLinkComponent implements OnInit {
       return `needs at least ${errors.minlength.requiredLength} characters (got ${errors.minlength.actualLength})`;
     } else if (errors.maxLength) {
       return `can have max. ${errors.maxLength.requiredLength} characters (got ${errors.maxLength.actualLength})`;
+    } else if (errors.max) {
+      return `can be max. 5000`;
     }
   }
 
   onSubmit() {
-    this._eventDataService.addLinkToEvent(
-      this._id, new Link(
-        this._link.value.name,
-        this._link.value.url
+    this._eventDataService.addPriceToEvent(
+      this._id,
+      new Price(
+        this._price.value.name,
+        this._price.value.description,
+        this._price.value.cost
       )
     ).subscribe((response) => {
       if (response) {
-        this._router.navigate([`add-event/${response.eventId}/add-price`]);
+        this._router.navigate(['all-events']);
       } else {
-        this._errorMessage = 'Could not add link';
+        this._errorMessage = 'Could not add price';
       }
     });
   }
-
 }
