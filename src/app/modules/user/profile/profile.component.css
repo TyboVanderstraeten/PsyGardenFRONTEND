@@ -1,3 +1,10 @@
+.profile {
+  text-align: center;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
 .loading {
   margin-left: 47%;
   margin-top: 20%;

@@ -5,13 +5,14 @@
 </div>
 
 <div *ngIf="(user$|async) as user;else loading">
-  <div style="text-align:center;">
-    <div>
-      <h1>{{user.firstname}} {{user.lastname}}</h1>
-    </div>
-    <div>
-      <p><strong>E-mail: </strong>{{user.email}}</p>
-    </div>
+  <div class="profile">
+    <mat-card>
+      <mat-card-title>{{user.firstname}} {{user.lastname}}</mat-card-title>
+      <mat-card-content>
+        <p><strong>E-mail: </strong>{{user.email}}</p>
+        <p><strong>Admin: </strong>{{user.isAdmin?"Yes":"No"}}</p>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
