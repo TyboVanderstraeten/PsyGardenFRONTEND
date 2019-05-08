@@ -1,20 +1,16 @@
 .shortCard {
-    margin: 15px;
-  }
-  
-  .headerImage {
-    width: 750px;
-    padding: 15px;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .buttons button{
-    margin-right: 10px;
-    width:140px;
-  }
-  
+  width: 50%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.headerImage {
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+mat-card-content {
+  text-align: left;
+  font-style: italic;
+}

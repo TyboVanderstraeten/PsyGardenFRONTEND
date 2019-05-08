@@ -1,11 +1,27 @@
-.shortCards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .loading {
-    margin-left: 47%;
-    margin-top: 20%;
-    margin-bottom:20%;
-  }
+.addButtonContainer {
+  display: flex;
+}
+
+.addButton {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.loading {
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
