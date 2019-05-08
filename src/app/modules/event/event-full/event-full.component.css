@@ -1,48 +1,50 @@
-.details {
-    padding: 15px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .headerImage {
-    width: 40%;
-    border-radius: 10px;
-  }
-  
-  .buttons button {
-    margin-top: 10px;
-    margin-right: 10px;
-    width: 120px;
-  }
-  
-  .genreLink {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .link {
-    color: black;
-  }
-  
-  .mapCardDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mapCard {
-    width: 40%;
-    border-radius: 10px;
-  }
-  
-  agm-map {
-    height: 400px;
-    width: 100%;
-  }
-  
-  .loading {
-    margin-left: 47%;
-    margin-top: 20%;
-    margin-bottom: 20%;
-  }
-  
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullCard {
+  width: 50%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+mat-card-title{
+  font-size: 2.5em;
+}
+
+.headerImage {
+  width: 100%;
+  border-radius: 10px;
+}
+
+table {
+  margin: 0 auto;
+  width: 70%;
+}
+
+td,
+th {
+  width: 35%;
+  text-align: left;
+}
+
+th {
+  background-color: lightgray;
+}
+
+tr:hover {
+  background-color: lightblue;
+}
+
+agm-map {
+  height: 400px;
+  width: 100%;
+}
+
+.loading {
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
