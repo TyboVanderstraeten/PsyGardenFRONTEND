@@ -12,10 +12,10 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
-            <mat-label>Description</mat-label>
-            <input matInput aria-label="Description" type="text" formControlName="description" required />
-            <mat-error *ngIf="_event.get('description')['errors'] && _event.get('description').touched">
-              {{getErrorMessage(_event.get('description')['errors'])}}
+            <mat-label>Image URL</mat-label>
+            <input matInput aria-label="HeaderImageURL" type="text" formControlName="headerImageURL" required />
+            <mat-error *ngIf="_event.get('headerImageURL')['errors'] && _event.get('headerImageURL').touched">
+              {{getErrorMessage(_event.get('headerImageURL')['errors'])}}
             </mat-error>
           </mat-form-field>
         </p>
@@ -89,12 +89,12 @@
             </mat-error>
           </mat-form-field>
         </p>
-        <p>
-          <mat-form-field appearance="outline">
-            <mat-label>Image URL</mat-label>
-            <input matInput aria-label="HeaderImageURL" type="text" formControlName="headerImageURL" required />
-            <mat-error *ngIf="_event.get('headerImageURL')['errors'] && _event.get('headerImageURL').touched">
-              {{getErrorMessage(_event.get('headerImageURL')['errors'])}}
+        <p >
+          <mat-form-field appearance="outline" class="descriptionArea">
+            <mat-label>Description</mat-label>
+            <textarea class="description" matInput aria-label="Description" type="text" formControlName="description" required></textarea>
+            <mat-error *ngIf="_event.get('description')['errors'] && _event.get('description').touched">
+              {{getErrorMessage(_event.get('description')['errors'])}}
             </mat-error>
           </mat-form-field>
         </p>

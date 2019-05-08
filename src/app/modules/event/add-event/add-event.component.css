@@ -9,3 +9,11 @@ mat-form-field {
   width: 40%;
   padding-right: 15px;
 }
+
+.descriptionArea {
+  width: 83%;
+}
+
+.description {
+  height: 125px;
+}
