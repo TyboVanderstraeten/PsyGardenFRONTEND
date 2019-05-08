@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GenreDataService } from '../genre-data.service';
 
@@ -34,7 +34,7 @@ export class RemoveGenreComponent implements OnInit {
       .subscribe((response) => {
         if (response) {
           this._router.navigate(['genres']);
-        }else {
+        } else {
           this._errorMessage = 'Could not remove genre';
         }
       })
