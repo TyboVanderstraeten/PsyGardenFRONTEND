@@ -20,10 +20,10 @@
           </mat-form-field>
         </p>
         <mat-card-actions>
-          <button type="submit" (click)="onSubmit('Another')" mat-raised-button [disabled]="!_link.valid">Add another
-            link</button>
-          <button type="submit" (click)="onSubmit('Next')" mat-raised-button [disabled]="!_link.valid">Save</button>
-          <button mat-raised-button [routerLink]="['../../../all-events']">Cancel</button>
+          <a type="submit" (click)="onSubmit('Another')" mat-raised-button [disabled]="!_link.valid">Add another
+            link</a>
+          <a type="submit" (click)="onSubmit('Next')" mat-raised-button [disabled]="!_link.valid">Save</a>
+          <a mat-raised-button [routerLink]="['../../../all-events']">Cancel</a>
         </mat-card-actions>
       </form>
     </mat-card-content>

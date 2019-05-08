@@ -2,8 +2,8 @@
   <mat-card>
     <mat-card-title>Are you sure you want to remove this event?</mat-card-title>
     <mat-card-actions>
-      <button mat-raised-button (click)="onSubmit()">Yes</button>
-      <button mat-raised-button [routerLink]="['../../all-events/detail-page',this._id]">No</button>
+      <a mat-raised-button (click)="onSubmit()">Yes</a>
+      <a mat-raised-button [routerLink]="['../../all-events/detail-page',this._id]">No</a>
     </mat-card-actions>
   </mat-card>
 </div>

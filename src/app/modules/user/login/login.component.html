@@ -22,9 +22,9 @@
             </mat-error>
           </mat-form-field>
         </p>
-        <p>
-          <button type="submit" mat-raised-button [disabled]="!_user.valid">Login</button>
-        </p>
+        <mat-card-actions>
+          <a type="submit" mat-raised-button [disabled]="!_user.valid">Login</a>
+        </mat-card-actions>
       </form>
     </mat-card-content>
   </mat-card>

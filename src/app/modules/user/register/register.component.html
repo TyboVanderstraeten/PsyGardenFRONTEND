@@ -66,9 +66,9 @@
             {{getErrorMessage(_user.get('passwordGroup').errors)}}
           </mat-error>
         </p>
-        <p>
-          <button type="submit" mat-raised-button [disabled]="!_user.valid">Register</button>
-        </p>
+        <mat-card-actions>
+          <a type="submit" mat-raised-button [disabled]="!_user.valid">Register</a>
+        </mat-card-actions>
       </form>
     </mat-card-content>
   </mat-card>
