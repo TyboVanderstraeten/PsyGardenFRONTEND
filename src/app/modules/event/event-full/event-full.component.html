@@ -6,14 +6,15 @@
         <mat-card-subtitle><strong>Starts: {{event.startDate|date:'dd/MM/yyyy hh:mm a'}} | Ends:
             {{event.endDate|date:'dd/MM/yyyy hh:mm a'}}</strong></mat-card-subtitle>
         <img src="{{event.headerImageURL}}" class="headerImage" />
-        <hr />
-        <mat-card-actions>
+        <mat-card-actions *ngIf="(isUserLoggedIn())">
+          <hr />
           <a mat-raised-button (click)="addToInterested(event.eventId)">Add to interested</a>
           <a mat-raised-button (click)="addToGoing(event.eventId)">Add to going</a>
           <a mat-raised-button [routerLink]="['../../../remove-event',event.eventId]">Remove</a>
+          <hr />
         </mat-card-actions>
-        <hr />
         <br />
+        <br *ngIf="(!isUserLoggedIn())" />
         <mat-card-subtitle><strong>What?</strong></mat-card-subtitle>
         <mat-card-content class="description">
           {{event.description}}
@@ -22,8 +23,9 @@
         <mat-card-content>
           <mat-card-subtitle><strong>Location</strong></mat-card-subtitle>
           <mat-card-content class="location">
-            <p>{{event.street}} {{event.streetNr}}, {{event.zipCode}} {{event.city.toUpperCase()}}</p>
-            <p>{{event.region}}, {{event.country}}</p>
+            <p>{{event.street}} {{event.streetNr}}{{event.streetNr?",":""}} {{event.zipCode}}
+              {{event.city.toUpperCase()}}</p>
+            <p>{{event.region}}{{event.region?",":""}} {{event.country}}</p>
           </mat-card-content>
         </mat-card-content>
         <br />

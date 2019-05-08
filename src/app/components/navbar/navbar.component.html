@@ -4,7 +4,7 @@
       <span class="box">
         <a mat-button [routerLink]="['europe-map']">Map</a>
         <a mat-button [routerLink]="['all-events']">Events</a>
-        <a mat-button [routerLink]="['genres']">Genres</a>
+        <a mat-button [routerLink]="['genres']" *ngIf="(isUserLoggedIn())">Genres</a>
       </span>
       <span class="box">
         <a [routerLink]="['all-events']">

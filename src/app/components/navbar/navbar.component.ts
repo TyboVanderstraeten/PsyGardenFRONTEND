@@ -10,7 +10,13 @@ import { AuthenticationService } from 'src/app/modules/user/authentication.servi
 export class NavbarComponent {
   loggedInUser$ = this._authenticationService.user$;
 
-  constructor(private _authenticationService: AuthenticationService) { }
+  constructor(
+    private _authenticationService: AuthenticationService
+  ) { }
+
+  isUserLoggedIn(): boolean {
+    return this._authenticationService.token != null && this._authenticationService.token != "";
+  }
 
   logout() {
     this._authenticationService.logout();

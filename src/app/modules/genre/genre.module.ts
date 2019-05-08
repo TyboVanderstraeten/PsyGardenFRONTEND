@@ -10,7 +10,7 @@ import { RemoveGenreComponent } from './remove-genre/remove-genre.component';
 import { AuthGuard } from '../user/auth.guard';
 
 const routes: Routes = [
-  { path: 'genres', component: AllGenresComponent },
+  { path: 'genres', canActivate: [AuthGuard], component: AllGenresComponent },
   { path: 'add-genre', canActivate: [AuthGuard], component: AddGenreComponent },
   { path: 'edit-genre/:id', canActivate: [AuthGuard], component: EditGenreComponent },
   { path: 'remove-genre/:id', canActivate: [AuthGuard], component: RemoveGenreComponent }

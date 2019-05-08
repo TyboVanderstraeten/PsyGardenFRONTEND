@@ -4,6 +4,7 @@ import { EventDataService } from '../event-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Event } from 'src/app/modules/event/event.model';
 import { UserDataService } from '../../user/user-data.service';
+import { AuthenticationService } from '../../user/authentication.service';
 
 @Component({
   selector: 'app-event-full',
@@ -17,6 +18,7 @@ export class EventFullComponent implements OnInit {
 
   constructor(
     private _eventDataService: EventDataService,
+    private _authenticationService: AuthenticationService,
     private _route: ActivatedRoute,
     private _userDataService: UserDataService) {
   }
@@ -39,6 +41,10 @@ export class EventFullComponent implements OnInit {
     return this._fetchEvent$;
   }
 
+  isUserLoggedIn(): boolean {
+    return this._authenticationService.token != null&&this._authenticationService.token != "";
+  }
+
   removeEvent(eventId: Number) {
     this._eventDataService.removeEvent(eventId)
       .subscribe();
@@ -47,16 +53,16 @@ export class EventFullComponent implements OnInit {
   addToInterested(eventId: Number) {
     this._userDataService.addToInterested(eventId)
       .subscribe();
-      this.reloadComponent();
+    this.reloadComponent();
   }
 
   addToGoing(eventId: Number) {
     this._userDataService.addToGoing(eventId)
       .subscribe();
-      this.reloadComponent();
+    this.reloadComponent();
   }
 
-  reloadComponent(){
+  reloadComponent() {
     this.ngOnDestroy();
     this.ngOnInit();
   }
