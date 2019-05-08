@@ -6,31 +6,42 @@
         <mat-card-subtitle><strong>Starts: {{event.startDate|date:'dd/MM/yyyy hh:mm a'}} | Ends:
             {{event.endDate|date:'dd/MM/yyyy hh:mm a'}}</strong></mat-card-subtitle>
         <img src="{{event.headerImageURL}}" class="headerImage" />
+        <hr />
         <mat-card-actions>
           <a mat-raised-button (click)="addToInterested(event.eventId)">Add to interested</a>
           <a mat-raised-button (click)="addToGoing(event.eventId)">Add to going</a>
           <a mat-raised-button [routerLink]="['../../../remove-event',event.eventId]">Remove</a>
         </mat-card-actions>
-        <mat-card-content>
+        <hr />
+        <br />
+        <mat-card-subtitle><strong>What?</strong></mat-card-subtitle>
+        <mat-card-content class="description">
           {{event.description}}
         </mat-card-content>
+        <br />
         <mat-card-content>
-          <mat-card-content>
+          <mat-card-subtitle><strong>Location</strong></mat-card-subtitle>
+          <mat-card-content class="location">
             <p>{{event.street}} {{event.streetNr}}, {{event.zipCode}} {{event.city.toUpperCase()}}</p>
             <p>{{event.region}}, {{event.country}}</p>
           </mat-card-content>
         </mat-card-content>
+        <br />
+        <mat-card-subtitle><strong>Genres</strong></mat-card-subtitle>
         <mat-card-content>
           <table mat-table [dataSource]="event.genres" class="mat-elevation-z8">
             <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef>Name</th>
-              <td mat-cell *matCellDef="let genre"><a href="https://www.google.com/search?q={{genre.genre.name}}"
-                  target="_blank">{{genre.genre.name}}</a></td>
+              <td mat-cell *matCellDef="let genre"><a class="link"
+                  href="https://www.google.com/search?q={{genre.genre.name}}" target="_blank">{{genre.genre.name}}</a>
+              </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="['name']"></tr>
             <tr mat-row *matRowDef="let rowData; columns:['name']"></tr>
           </table>
         </mat-card-content>
+        <br />
+        <mat-card-subtitle><strong>Tickets</strong></mat-card-subtitle>
         <mat-card-content>
           <table mat-table [dataSource]="event.prices" class="mat-elevation-z8">
             <ng-container matColumnDef="name">
@@ -49,6 +60,8 @@
             <tr mat-row *matRowDef="let rowData; columns:['name','description','cost']"></tr>
           </table>
         </mat-card-content>
+        <br />
+        <mat-card-subtitle><strong>Links</strong></mat-card-subtitle>
         <mat-card-content>
           <table mat-table [dataSource]="event.links" class="mat-elevation-z8">
             <ng-container matColumnDef="name">
@@ -57,12 +70,15 @@
             </ng-container>
             <ng-container matColumnDef="url">
               <th mat-header-cell *matHeaderCellDef>URL</th>
-              <td mat-cell *matCellDef="let link"><a href="{{link.url}}" target="_blank">{{link.url}}</a></td>
+              <td mat-cell *matCellDef="let link"><a class="link" href="{{link.url}}" target="_blank">{{link.url}}</a>
+              </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="['name','url']"></tr>
             <tr mat-row *matRowDef="let rowData; columns:['name','url']"></tr>
           </table>
         </mat-card-content>
+        <br />
+        <mat-card-subtitle><strong>Map</strong></mat-card-subtitle>
         <mat-card-content>
           <agm-map [latitude]="55.676098" [longitude]="12.568337" [zoom]="3">
             <app-map-marker [event]="event"></app-map-marker>
