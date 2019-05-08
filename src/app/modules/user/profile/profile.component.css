@@ -5,6 +5,10 @@
   margin-top: 15px;
 }
 
+.properties{
+  text-align:left;
+}
+
 .loading {
   margin-left: 47%;
   margin-top: 20%;

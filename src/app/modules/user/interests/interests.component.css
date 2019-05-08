@@ -1,13 +1,25 @@
 table {
   margin: 0 auto;
-  width: 70%;
+  width: 65%;
 }
 
 td,
 th {
-  width: (70%/6);
+  width: 12%;
 }
 
+th {
+  background-color: lightgray;
+}
+
+tr:hover {
+  background-color: lightblue;
+}
+
+td:nth-child(6),
+th:nth-child(6) {
+  width: 5%;
+}
 
 .loading {
   margin-left: 47%;
