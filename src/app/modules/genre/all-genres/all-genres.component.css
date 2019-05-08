@@ -1,13 +1,38 @@
-.genreCards {
-    display: inline-block;
-    width: 15%;
-    margin: 15px;
-    text-align: center;
-  }
-  
-  .loading {
-    margin-left: 47%;
-    margin-top: 20%;
-    margin-bottom: 20%;
-  }
-  
+.addButtonContainer {
+  display: flex;
+}
+
+.addButton{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  margin: 0 auto;
+  width: 30%;
+}
+
+td,
+th {
+  width: 20%;
+}
+
+th {
+  background-color: lightgray;
+}
+
+tr:hover {
+  background-color: lightblue;
+}
+
+td:nth-child(2),
+th:nth-child(2) {
+  width: 10%;
+}
+
+.loading {
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}

@@ -1,7 +1,27 @@
 <div *ngIf="(genres$ | async) as genres; else loading">
-  <button mat-raised-button [routerLink]="['../add-genre']">Add genre</button><br />
-  <div *ngFor="let genre of genres" class="genreCards">
-    <app-genre [genre]="genre"></app-genre>
+  <div>
+    <br />
+    <div class="addButtonContainer">
+      <span class="addButton">
+        <a mat-raised-button [routerLink]="['../add-genre']">Add genre</a>
+      </span>
+    </div>
+    <br />
+    <table mat-table [dataSource]="genres" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let genre">{{genre.name}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let genre">
+          <a mat-button [routerLink]="['../edit-genre',genre.genreId]">Edit</a>
+          <a mat-button [routerLink]="['../remove-genre',genre.genreId]">Remove</a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="['name','actions']"></tr>
+      <tr mat-row *matRowDef="let rowData; columns:['name','actions']"></tr>
+    </table>
   </div>
 </div>
 
