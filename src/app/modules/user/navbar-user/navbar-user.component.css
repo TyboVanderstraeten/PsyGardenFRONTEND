@@ -1,3 +1,9 @@
-.row-items {
-  margin: 0 auto;
+.container {
+  display: flex;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }

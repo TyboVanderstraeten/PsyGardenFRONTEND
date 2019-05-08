@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
 import { Observable } from 'rxjs';
 import { UserDataService } from '../user-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-interests',
@@ -13,6 +14,7 @@ export class InterestsComponent implements OnInit {
 
   constructor(
     private _userDataService: UserDataService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -25,6 +27,10 @@ export class InterestsComponent implements OnInit {
 
   get user$(): Observable<User> {
     return this._fetchUser$;
+  }
+
+  interestClicked(eventId: Number) {
+    this._router.navigate([`../all-events/detail-page/${eventId}`]);
   }
 
   addToGoing(eventId: Number) {

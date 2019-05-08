@@ -1,31 +1,26 @@
 <header>
   <mat-toolbar>
     <mat-toolbar-row class="container">
-
       <span class="box">
         <a mat-button [routerLink]="['europe-map']">Map</a>
         <a mat-button [routerLink]="['all-events']">Events</a>
         <a mat-button [routerLink]="['genres']">Genres</a>
       </span>
-
       <span class="box">
         <a [routerLink]="['all-events']">
           <img src="assets/img/psygardenLogo.png" />
         </a>
       </span>
-
       <span class="box" *ngIf="(loggedInUser$ | async) as user;else loggedOut">
         <a mat-button [routerLink]="['profile']">Welcome, {{user}}!</a>
         <a mat-button (click)="logout()">Logout</a>
       </span>
-
       <ng-template #loggedOut>
         <span class="box">
           <a mat-button [routerLink]="['register']">Register</a>
           <a mat-button [routerLink]="['login']">Login</a>
         </span>
       </ng-template>
-
     </mat-toolbar-row>
   </mat-toolbar>
 </header>

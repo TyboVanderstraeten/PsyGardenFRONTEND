@@ -1,16 +1,16 @@
-.profile {
-  text-align: center;
-  width: 30%;
-  margin: 0 auto;
-  margin-top: 15px;
-}
+ .profile {
+   text-align: center;
+   width: 30%;
+   margin: 0 auto;
+   margin-top: 15px;
+ }
 
-.properties{
-  text-align:left;
-}
+ .properties {
+   text-align: left;
+ }
 
-.loading {
-  margin-left: 47%;
-  margin-top: 20%;
-  margin-bottom: 20%;
-}
+ .loading {
+   margin-left: 47%;
+   margin-top: 20%;
+   margin-bottom: 20%;
+ }

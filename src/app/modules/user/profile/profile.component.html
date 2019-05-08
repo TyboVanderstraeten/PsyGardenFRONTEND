@@ -6,7 +6,7 @@
 
 <div *ngIf="(user$|async) as user;else loading">
   <div class="profile">
-    <mat-card>
+    <mat-card [style.backgroundColor]="'lightgray'">
       <mat-card-title>{{user.firstname}} {{user.lastname}}</mat-card-title>
       <mat-card-content>
         <div class="properties">
