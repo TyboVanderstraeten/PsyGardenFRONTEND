@@ -6,29 +6,42 @@
 
 <div *ngIf="(user$|async) as user;else loading">
   <div>
-    <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Days left</th>
-        <th>Country</th>
-        <th>Starts</th>
-        <th>Ends</th>
-        <th>Actions</th>
-      </tr>
-      <tr *ngFor="let event of user.goings">
-        <td>{{event.name}}</td>
-        <td>{{event.calculateDaysLeft()}}</td>
-        <td>{{event.country}}</td>
-        <td>{{event.startDate | date:'dd/MM/yyyy'}}</td>
-        <td>{{event.endDate | date:'dd/MM/yyyy'}}</td>
-        <td>
-          <span>
-            <!-- <mat-icon>remove_circle</mat-icon> -->
-            <a mat-button (click)="addToInterested(event.eventId)">Add to interested</a>
-            <a mat-button (click)="removeFromGoing(event.eventId)">Remove from going</a>
-          </span>
+    <table mat-table [dataSource]="user.goings" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let event">{{event.name}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="daysLeft">
+        <th mat-header-cell *matHeaderCellDef>Days left</th>
+        <td mat-cell *matCellDef="let event">{{event.calculateDaysLeft()}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef>Country</th>
+        <td mat-cell *matCellDef="let event">{{event.country}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="starts">
+        <th mat-header-cell *matHeaderCellDef>Starts</th>
+        <td mat-cell *matCellDef="let event">{{event.startDate | date:'dd/MM/yyyy'}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ends">
+        <th mat-header-cell *matHeaderCellDef>Ends</th>
+        <td mat-cell *matCellDef="let event">{{event.endDate | date:'dd/MM/yyyy'}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let event">
+          <a mat-button (click)="addToInterested(event.eventId)">Add to interested</a>
+          <a mat-button (click)="removeFromGoing(event.eventId)">Remove from going</a>
         </td>
-      </tr>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name','daysLeft','country','starts','ends','actions']"></tr>
+      <tr mat-row *matRowDef="let rowData; columns:['name','daysLeft','country','starts','ends','actions']"></tr>
     </table>
   </div>
 </div>
