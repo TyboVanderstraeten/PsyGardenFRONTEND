@@ -11,7 +11,9 @@ import { environment } from 'src/environments/environment.prod';
 export class CoordinatesDataService {
   public addressString: String;
 
-  constructor(private _http: HttpClient) {
+  constructor(
+    private _http: HttpClient
+  ) {
   }
 
   get coordinates$(): Observable<Coordinates> {
