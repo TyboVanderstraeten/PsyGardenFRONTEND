@@ -5,20 +5,20 @@ table {
 
 td,
 th {
-  width: 12%;
+  width: 10%;
 }
 
-th{
+th {
   background-color: lightgray;
 }
 
-tr:hover{
-  background-color:lightblue;
+tr:hover {
+  background-color: lightblue;
 }
 
 td:nth-child(6),
 th:nth-child(6) {
-  width: 5%;
+  width: 15%;
 }
 
 .loading {
