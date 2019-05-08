@@ -1,11 +1,13 @@
 <div *ngIf="(coordinates$ | async) as coordinates;">
   <agm-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude">
-    <agm-info-window *ngIf="(infowindow)">
-      <h2>{{event.name}}</h2>
-      <p><strong>{{event.country}}</strong></p>
-      <p>{{event.startDate | date:'dd/MM/yyyy'}} - {{event.endDate | date:'dd/MM/yyyy'}}</p>
-      <p>{{event.description}}</p>
-      <button mat-button [routerLink]="['../all-events/detail-page',event.eventId]" class="moreDetails">More details</button>
+    <agm-info-window [maxWidth]="200" *ngIf="(infowindow)">
+      <div class="container">
+        <h2>{{event.name}}</h2>
+        <img class="headerImage" src="{{event.headerImageURL}}" />
+        <p><strong>{{event.calculateDaysLeft()}} days left</strong></p>
+        <p>{{event.startDate | date:'dd/MM/yyyy'}} - {{event.endDate | date:'dd/MM/yyyy'}}</p>
+        <a mat-button [routerLink]="['../all-events/detail-page',event.eventId]">More details</a>
+      </div>
     </agm-info-window>
   </agm-marker>
 </div>
