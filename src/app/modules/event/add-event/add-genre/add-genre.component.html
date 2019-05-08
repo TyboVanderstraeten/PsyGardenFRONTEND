@@ -15,10 +15,10 @@
           </mat-form-field>
         </p>
         <mat-card-actions>
-          <a type="submit" (click)="onSubmit('Another')" mat-raised-button [disabled]="!_genre.valid">Add another
-            genre</a>
-          <a type="submit" (click)="onSubmit('Next')" mat-raised-button [disabled]="!_genre.valid">Next</a>
-          <a mat-raised-button [routerLink]="['../../../all-events']">Cancel</a>
+          <button type="submit" (click)="onSubmit('Another')" mat-raised-button [disabled]="!_genre.valid">Add another
+            genre</button>
+          <button type="submit" (click)="onSubmit('Next')" mat-raised-button [disabled]="!_genre.valid">Next</button>
+          <button mat-raised-button [routerLink]="['../../../all-events']">Cancel</button>
         </mat-card-actions>
       </form>
     </mat-card-content>

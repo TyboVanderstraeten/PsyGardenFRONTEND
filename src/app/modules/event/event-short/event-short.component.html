@@ -2,7 +2,7 @@
   <mat-card>
     <mat-card-title>{{event.name}} ({{event.country.toUpperCase()}})</mat-card-title>
     <mat-card-subtitle>Starting {{event.startDate | date:'dd/MM/yyyy'}} to {{event.endDate|date:'dd/MM/yyyy'}}
-      ({{event.nrOfDays}} days of fun!)</mat-card-subtitle>
+      ({{event.nrOfDays}} {{event.nrOfDays>1?"days of fun!":"day of fun!"}})</mat-card-subtitle>
     <img mat-card-image src="{{event.headerImageURL}}" class="headerImage" />
     <mat-card-content>
       <p>{{event.description}}</p>

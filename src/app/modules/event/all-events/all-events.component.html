@@ -1,6 +1,6 @@
 <div *ngIf="(events$ | async) as events; else loading">
   <br />
-  <div class="addButtonContainer">
+  <div class="addButtonContainer" *ngIf="(isUserLoggedIn())">
     <span class="addButton">
       <a mat-raised-button [routerLink]="['../add-event']">Add event</a>
     </span>
