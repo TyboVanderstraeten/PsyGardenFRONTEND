@@ -1,13 +1,22 @@
-.navbar {
-  height: 80px;
+mat-toolbar {
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
 }
 
-.logo {
-  height: 65px;
-  padding-top: 20px;
+.container {
+  display: flex;
 }
 
-.buttons {
-  padding-top: 15px;
-  margin: 0 auto;
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.box:first-child>span {
+  margin-right: auto;
+}
+
+.box:last-child>span {
+  margin-left: auto;
 }

@@ -1,27 +1,31 @@
 <header>
-  <mat-toolbar class="navbar">
-    <mat-toolbar-row>
-      <!-- <audio controls autoplay preload="metadata" style=" width:300px;">
-        <source src="assets/music/AgnetonChildrenOfTheDemon.mp3" type="audio/mpeg">
-      </audio><br /> -->
-      <div class="buttons">
+  <mat-toolbar>
+    <mat-toolbar-row class="container">
+
+      <span class="box">
         <a mat-button [routerLink]="['europe-map']">Map</a>
         <a mat-button [routerLink]="['all-events']">Events</a>
         <a mat-button [routerLink]="['genres']">Genres</a>
-      </div>
-      <a [routerLink]="['all-events']">
-        <img class="logo" src="assets/img/psygardenLogo.png" />
-      </a>
-      <div class="buttons" *ngIf="(loggedInUser$ | async) as user;else loggedOut">
+      </span>
+
+      <span class="box">
+        <a [routerLink]="['all-events']">
+          <img src="assets/img/psygardenLogo.png" />
+        </a>
+      </span>
+
+      <span class="box" *ngIf="(loggedInUser$ | async) as user;else loggedOut">
         <a mat-button [routerLink]="['profile']">Welcome, {{user}}!</a>
         <a mat-button (click)="logout()">Logout</a>
-      </div>
+      </span>
+
       <ng-template #loggedOut>
-        <div class="buttons">
+        <span class="box">
           <a mat-button [routerLink]="['register']">Register</a>
           <a mat-button [routerLink]="['login']">Login</a>
-        </div>
+        </span>
       </ng-template>
+
     </mat-toolbar-row>
   </mat-toolbar>
 </header>
