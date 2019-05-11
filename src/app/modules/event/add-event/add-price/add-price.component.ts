@@ -65,12 +65,17 @@ export class AddPriceComponent implements OnInit {
       if (response) {
         if (actionType === "Next") {
           this._router.navigate([`add-event/${response.eventId}/add-link`]);
-        }else if(actionType==="Another"){
+        } else if (actionType === "Another") {
           this._router.navigate([`add-event/${response.eventId}/add-price`]);
         }
       } else {
         this._errorMessage = 'Could not add price';
       }
     });
+  }
+
+  cancel() {
+    this._eventDataService.removeEvent(this._id).subscribe();
+    this._router.navigate(['all-events']);
   }
 }

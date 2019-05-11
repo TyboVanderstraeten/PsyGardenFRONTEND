@@ -18,7 +18,7 @@
           <button type="submit" (click)="onSubmit('Another')" mat-raised-button [disabled]="!_genre.valid">Add another
             genre</button>
           <button type="submit" (click)="onSubmit('Next')" mat-raised-button [disabled]="!_genre.valid">Next</button>
-          <button mat-raised-button [routerLink]="['../../../all-events']">Cancel</button>
+          <button mat-raised-button (click)="cancel()">Cancel</button>
         </mat-card-actions>
       </form>
     </mat-card-content>

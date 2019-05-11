@@ -66,13 +66,18 @@ export class AddGenreComponent implements OnInit {
       if (response) {
         if (actionType === "Next") {
           this._router.navigate([`add-event/${response.eventId}/add-price`]);
-        }else if(actionType==="Another"){
+        } else if (actionType === "Another") {
           this._router.navigate([`add-event/${response.eventId}/add-genre`]);
         }
       } else {
         this._errorMessage = 'Could not add genre';
       }
     });
+  }
+
+  cancel() {
+    this._eventDataService.removeEvent(this._id).subscribe();
+    this._router.navigate(['all-events']);
   }
 
 }

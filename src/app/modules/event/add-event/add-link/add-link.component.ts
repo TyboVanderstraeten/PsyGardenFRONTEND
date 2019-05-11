@@ -69,4 +69,9 @@ export class AddLinkComponent implements OnInit {
     });
   }
 
+  cancel() {
+    this._eventDataService.removeEvent(this._id).subscribe();
+    this._router.navigate(['all-events']);
+  }
+
 }
