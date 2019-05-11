@@ -6,7 +6,7 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input matInput aria-label="E-mail" type="text" formControlName="email" required />
+            <input data-cy="email" matInput aria-label="E-mail" type="text" formControlName="email" required />
             <mat-error *ngIf="_user.get('email')['errors'] && _user.get('email').touched">
               {{getErrorMessage(_user.get('email')['errors'])}}
             </mat-error>
@@ -16,7 +16,7 @@
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <mat-pass-toggle-visibility #toggleP matSuffix></mat-pass-toggle-visibility>
-            <input matInput aria-label="Password" [type]="toggleP.type" formControlName="password" required />
+            <input data-cy="password" matInput aria-label="Password" [type]="toggleP.type" formControlName="password" required />
             <mat-error *ngIf="_user.get('password')['errors'] && _user.get('password').touched">
               {{getErrorMessage(_user.get('password')['errors'])}}
             </mat-error>

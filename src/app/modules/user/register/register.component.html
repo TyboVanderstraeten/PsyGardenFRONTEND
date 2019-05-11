@@ -6,14 +6,15 @@
         <p>
           <mat-form-field appearance="outline">
             <mat-label>First name</mat-label>
-            <input matInput aria-label="First name" type="text" formControlName="firstname" required />
+            <input data-cy="firstname" matInput aria-label="First name" type="text" formControlName="firstname"
+              required />
             <mat-error *ngIf="_user.get('firstname')['errors'] && _user.get('firstname').touched">
               {{getErrorMessage(_user.get('firstname')['errors'])}}
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Last name</mat-label>
-            <input matInput aria-label="Last name" type="text" formControlName="lastname" required />
+            <input data-cy="lastname" matInput aria-label="Last name" type="text" formControlName="lastname" required />
             <mat-error *ngIf="_user.get('lastname')['errors'] && _user.get('lastname').touched">
               {{getErrorMessage(_user.get('lastname')['errors'])}}
             </mat-error>
@@ -22,7 +23,7 @@
         <p formGroupName="emailGroup">
           <mat-form-field appearance="outline" class="email">
             <mat-label>E-mail</mat-label>
-            <input matInput aria-label="E-mail" type="text" formControlName="email" required />
+            <input data-cy="email" matInput aria-label="E-mail" type="text" formControlName="email" required />
             <mat-error
               *ngIf="_user.get('emailGroup').get('email')['errors'] && _user.get('emailGroup').get('email').touched">
               {{getErrorMessage(_user.get('email')['errors'])}}
@@ -30,7 +31,7 @@
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Verify e-mail</mat-label>
-            <input matInput aria-label="emailConfirmation" type="text" formControlName="emailConfirmation" required />
+            <input data-cy="emailConfirmation" matInput aria-label="emailConfirmation" type="text" formControlName="emailConfirmation" required />
             <mat-error
               *ngIf="_user.get('emailGroup').get('emailConfirmation')['errors'] && _user.get('emailGroup').get('emailConfirmation').touched">
               {{getErrorMessage(_user.get('emailConfirmation')['errors'])}}
@@ -45,7 +46,7 @@
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <mat-pass-toggle-visibility #toggleP matSuffix></mat-pass-toggle-visibility>
-            <input matInput aria-label="Password" [type]="toggleP.type" formControlName="password" required />
+            <input data-cy="password" matInput aria-label="Password" [type]="toggleP.type" formControlName="password" required />
             <mat-error
               *ngIf="_user.get('passwordGroup').get('password')['errors'] && _user.get('passwordGroup').get('password').touched">
               {{getErrorMessage(_user.get('password')['errors'])}}
@@ -54,7 +55,7 @@
           <mat-form-field appearance="outline">
             <mat-label>Verify password</mat-label>
             <mat-pass-toggle-visibility #togglePC matSuffix></mat-pass-toggle-visibility>
-            <input matInput aria-label="Password confirmation" [type]="togglePC.type"
+            <input data-cy="passwordConfirmation" matInput aria-label="Password confirmation" [type]="togglePC.type"
               formControlName="passwordConfirmation" required />
             <mat-error
               *ngIf="_user.get('passwordGroup').get('passwordConfirmation')['errors'] && _user.get('passwordGroup').get('passwordConfirmation').touched">
@@ -67,7 +68,7 @@
           </mat-error>
         </p>
         <mat-card-actions>
-          <button type="submit" mat-raised-button [disabled]="!_user.valid">Register</button>
+          <button data-cy="registerButton" type="submit" mat-raised-button [disabled]="!_user.valid">Register</button>
         </mat-card-actions>
       </form>
     </mat-card-content>
