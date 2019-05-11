@@ -1,0 +1,285 @@
+[{
+    "eventId": 3,
+    "name": "Ozora Festival",
+    "description": "The Ozora Festival, stylised as O.Z.O.R.A., is an annual psychedelic trance and arts festival in the Hungarian village of Ozora. The festival has been held on an estate in Ozora near the small vilage of Dádpuszta every year since 2004. The first modern music festival held in Ozora was called Solipse and took place during the Solar eclipse of August 11, 1999. Solipse did not get  a sequel until the first Ozora Festival was held in 2004. The Ozora Festival is one of the two sizeable psytrance festivals in Hungary ( the other being Solar United Natives festival), and is one of the largest psychedelic trance festivals in the world. As of 2016, it annualy attracts close to 60,000 people, similar to Boom Festival in Portugal and Antaris Project in Germany who also reach more than 40,000 visitors every year. Due to its success, several one-day spin-offs from the Ozora Festival have been held in several other countries such as Paris, France and São Paulo, Brazil.",
+    "startDate": "2019-07-29T21:00:00",
+    "endDate": "2019-08-04T21:00:00",
+    "nrOfDays": 7,
+    "country": "Hungary",
+    "region": "Ozora",
+    "city": "Dádpuszta",
+    "street": "Dádpuszta",
+    "streetNr": "7015",
+    "zipCode": "7086",
+    "headerImageURL": "https://i.redd.it/u4zwhkeca6j01.jpg",
+    "eventGenres": [{
+        "genre": {
+          "genreId": 2,
+          "name": "Nitzhogoa"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 7,
+          "name": "Techno"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 9,
+          "name": "Dark psytrance"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 11,
+          "name": "Full on"
+        }
+      }
+    ],
+    "prices": [{
+      "priceId": 9,
+      "name": "Standard ticket",
+      "description": "The standard price",
+      "cost": 194
+    }],
+    "links": [{
+        "linkId": 1,
+        "name": "Website",
+        "url": "ozorafestival.eu"
+      },
+      {
+        "linkId": 2,
+        "name": "Tickets",
+        "url": "ozorafestival.eu/tickets/buy-a-ticket-here/"
+      }
+    ]
+  },
+  {
+    "eventId": 4,
+    "name": "Psy-Fi",
+    "description": "Psy-Fi is an annual open air psychedelic music and arts festival in the Netherlands. The first edition was held in July 2013 in the Stadspark of the city of Groningen; all subsequent editions have been held in recreation area De Groene Ster to the east of Leeuwarden. It is one of the largest international festivals in the Netherlands and attracts thousands of visitors each year, with the 2017 edition reporting participants from about 100 different countries.",
+    "startDate": "2019-08-28T08:00:00",
+    "endDate": "2019-09-01T23:00:00",
+    "nrOfDays": 5,
+    "country": "Netherlands",
+    "region": null,
+    "city": "Leeuwarden",
+    "street": "De Groene Ster",
+    "streetNr": null,
+    "zipCode": "8926",
+    "headerImageURL": "https://static1.squarespace.com/static/52e562c3e4b04ab8b0fbe97d/56ef528bd210b8dcd0ac1675/56ef528b22482e26f27c3585/1458524828107/Fractalfest2015_2528.jpg?format=1500w",
+    "eventGenres": [{
+        "genre": {
+          "genreId": 2,
+          "name": "Nitzhogoa"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 7,
+          "name": "Techno"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 11,
+          "name": "Full on"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 14,
+          "name": "Psytrance"
+        }
+      }
+    ],
+    "prices": [{
+        "priceId": 1,
+        "name": "Sunday (gates)",
+        "description": "The price for Sunday",
+        "cost": 60
+      },
+      {
+        "priceId": 5,
+        "name": "1st Phase tickets",
+        "description": "The price for 1st phase tickets",
+        "cost": 112.5
+      },
+      {
+        "priceId": 6,
+        "name": "2nd Phase tickets",
+        "description": "The price for 2nd phase tickets",
+        "cost": 132.5
+      },
+      {
+        "priceId": 7,
+        "name": "3rd Phase tickets",
+        "description": "The price for 3rd phase tickets",
+        "cost": 152.5
+      },
+      {
+        "priceId": 8,
+        "name": "Full week (gates)",
+        "description": "The price for the full week",
+        "cost": 170
+      },
+      {
+        "priceId": 10,
+        "name": "Saturday + Sunday (gates)",
+        "description": "The price for the weekend",
+        "cost": 90
+      }
+    ],
+    "links": [{
+        "linkId": 5,
+        "name": "Website",
+        "url": "www.psy-fi.nl"
+      },
+      {
+        "linkId": 8,
+        "name": "Tickets",
+        "url": "www.psy-fi.nl/tickets"
+      }
+    ]
+  },
+  {
+    "eventId": 2,
+    "name": "Space Safari",
+    "description": "Space Safari is an annual open air psychedelic music and arts festival in Belgium.",
+    "startDate": "2019-08-30T14:00:00",
+    "endDate": "2019-09-02T14:00:00",
+    "nrOfDays": 4,
+    "country": "Belgium",
+    "region": "Namen",
+    "city": "Massembre",
+    "street": "Domaine De Massembre",
+    "streetNr": null,
+    "zipCode": "5543",
+    "headerImageURL": "http://freebornaiden.com/wp-content/uploads/2018/06/11890403_395297293997496_6413516115231520679_o.jpg",
+    "eventGenres": [{
+        "genre": {
+          "genreId": 2,
+          "name": "Nitzhogoa"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 7,
+          "name": "Techno"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 11,
+          "name": "Full on"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 14,
+          "name": "Psytrance"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 18,
+          "name": "Psy tech"
+        }
+      }
+    ],
+    "prices": [{
+        "priceId": 3,
+        "name": "2nd Phase tickets",
+        "description": "The price for 2nd phase tickets",
+        "cost": 80
+      },
+      {
+        "priceId": 4,
+        "name": "1st Phase tickets",
+        "description": "The price for 1st phase tickets",
+        "cost": 70
+      },
+      {
+        "priceId": 11,
+        "name": "3rd Phase tickets",
+        "description": "The price for 3rd phase tickets",
+        "cost": 90
+      }
+    ],
+    "links": [{
+        "linkId": 6,
+        "name": "Website",
+        "url": "www.space-safari.com"
+      },
+      {
+        "linkId": 7,
+        "name": "Tickets",
+        "url": "www.space-safari.com/tickets/"
+      }
+    ]
+  },
+  {
+    "eventId": 1,
+    "name": "Boom",
+    "description": "The Boom Festival is a biennial transformational festival in Portugal. The festival features music performances and a broad variety of visual art exhibits. Boom festival began in 1997 as a psychedelic trance music festival with a main stage and a lounge area with mellow 'Chill-Out music'. Now, there are five stages: the Dance Temple, for psytrance and natural trance music; the Alchemy Circle is for many fresh experimental genres, including psytechno, progressive psytrance, house and unique combinations of those; the Sacred Fire stage is for world music and live music performances; the Ambient Source is for chill-out music; the Funky Beach stage is for electronic dance music dee jays and producers. Other attractions include sculptures, an art gallery, street theatre, and fire performances. Within the shaded Liminal Village are lectures, yoga classes, film screenings, group meditation, and discussions. The Healing Area has group workshops for healing techniques, a pool for water therapy and a massage area.",
+    "startDate": "2020-07-28T00:00:00",
+    "endDate": "2020-08-04T00:00:00",
+    "nrOfDays": 8,
+    "country": "Portugal",
+    "region": "Castelo Branco",
+    "city": "Idanha-a-Nova",
+    "street": "Boomland Alcafozes",
+    "streetNr": null,
+    "zipCode": "6060-011",
+    "headerImageURL": "https://europebookings.com/wp-content/uploads/boom-festival-magic-lights-main-stage.jpg",
+    "eventGenres": [{
+        "genre": {
+          "genreId": 2,
+          "name": "Nitzhogoa"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 8,
+          "name": "Zenonseque"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 9,
+          "name": "Dark psytrance"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 15,
+          "name": "Dark roots"
+        }
+      },
+      {
+        "genre": {
+          "genreId": 17,
+          "name": "Goa"
+        }
+      }
+    ],
+    "prices": [{
+      "priceId": 2,
+      "name": "No tickets yet",
+      "description": "There are no tickets yet",
+      "cost": 0
+    }],
+    "links": [{
+        "linkId": 3,
+        "name": "Tickets",
+        "url": "www.boomfestival.org/boom2018/tickets/"
+      },
+      {
+        "linkId": 4,
+        "name": "Website",
+        "url": "www.boomfestival.org/boom2018/"
+      }
+    ]
+  }
+]

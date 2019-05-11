@@ -1,0 +1,63 @@
+{
+  "eventId": 1,
+  "name": "Boom",
+  "description": "The Boom Festival is a biennial transformational festival in Portugal. The festival features music performances and a broad variety of visual art exhibits. Boom festival began in 1997 as a psychedelic trance music festival with a main stage and a lounge area with mellow 'Chill-Out music'. Now, there are five stages: the Dance Temple, for psytrance and natural trance music; the Alchemy Circle is for many fresh experimental genres, including psytechno, progressive psytrance, house and unique combinations of those; the Sacred Fire stage is for world music and live music performances; the Ambient Source is for chill-out music; the Funky Beach stage is for electronic dance music dee jays and producers. Other attractions include sculptures, an art gallery, street theatre, and fire performances. Within the shaded Liminal Village are lectures, yoga classes, film screenings, group meditation, and discussions. The Healing Area has group workshops for healing techniques, a pool for water therapy and a massage area.",
+  "startDate": "2020-07-28T00:00:00",
+  "endDate": "2020-08-04T00:00:00",
+  "nrOfDays": 8,
+  "country": "Portugal",
+  "region": "Castelo Branco",
+  "city": "Idanha-a-Nova",
+  "street": "Boomland Alcafozes",
+  "streetNr": null,
+  "zipCode": "6060-011",
+  "headerImageURL": "https://europebookings.com/wp-content/uploads/boom-festival-magic-lights-main-stage.jpg",
+  "eventGenres": [{
+      "genre": {
+        "genreId": 2,
+        "name": "Nitzhogoa"
+      }
+    },
+    {
+      "genre": {
+        "genreId": 8,
+        "name": "Zenonseque"
+      }
+    },
+    {
+      "genre": {
+        "genreId": 9,
+        "name": "Dark psytrance"
+      }
+    },
+    {
+      "genre": {
+        "genreId": 15,
+        "name": "Dark roots"
+      }
+    },
+    {
+      "genre": {
+        "genreId": 17,
+        "name": "Goa"
+      }
+    }
+  ],
+  "prices": [{
+    "priceId": 2,
+    "name": "No tickets yet",
+    "description": "There are no tickets yet",
+    "cost": 0
+  }],
+  "links": [{
+      "linkId": 3,
+      "name": "Tickets",
+      "url": "www.boomfestival.org/boom2018/tickets/"
+    },
+    {
+      "linkId": 4,
+      "name": "Website",
+      "url": "www.boomfestival.org/boom2018/"
+    }
+  ]
+}
