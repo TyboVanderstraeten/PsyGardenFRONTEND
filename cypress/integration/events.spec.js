@@ -14,8 +14,7 @@ describe('Event testing', function () {
     cy.request('http://localhost:4200/PsyGardenAPI/Events')
     .then((response)=>{
         expect(response.body).to.have.length(4);
-        expect(response.body).to
-    })
+    });
   });
 
   it('Gets event with id 1', function () {
