@@ -15,6 +15,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { UserModule } from './modules/user/user.module';
 import { GenreModule } from './modules/genre/genre.module';
 import { EventModule } from './modules/event/event.module';
+import { ForumModule } from './modules/forum/forum.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EventModule } from './modules/event/event.module';
     UserModule,
     GenreModule,
     EventModule,
+    ForumModule,
     AppRoutingModule
   ],
   providers: [httpInterceptorProviders],
