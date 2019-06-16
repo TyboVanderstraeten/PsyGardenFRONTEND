@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostDataService {
+  public postId: Number;
 
   constructor(private _http: HttpClient) { }
 
@@ -17,6 +18,15 @@ export class PostDataService {
       .pipe(
         map(
           (postListJSON: any[]): Post[] => postListJSON.map(Post.fromJSON)
+        )
+      );
+  }
+
+  get post$(): Observable<Post> {
+    return this._http.get(`${environment.psyGardenApiUrl}/Posts/${this.postId}`)
+      .pipe(
+        map(
+          (postJSON: any): Post => Post.fromJSON(postJSON)
         )
       );
   }
