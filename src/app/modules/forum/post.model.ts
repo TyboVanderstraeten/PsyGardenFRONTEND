@@ -5,6 +5,7 @@ export class Post {
         private _title: string,
         private _content: string,
         private _datePosted: Date,
+        private _author: string,
         private _comments: any[]
     ) { }
 
@@ -12,11 +13,12 @@ export class Post {
     get title(): string { return this._title; }
     get content(): string { return this._content; }
     get datePosted(): Date { return this._datePosted; }
+    get author(): string { return this._author; }
     get comments(): any[] { return this._comments; }
 
     static fromJSON(json: any): Post {
         const postFromJSON = new Post(json.title, json.content, json.datePosted,
-        json.comments);
+            json.author, json.comments);
         postFromJSON._postId = json.postId;
         return postFromJSON;
     }
@@ -25,7 +27,8 @@ export class Post {
         return {
             title: this.title,
             content: this.content,
-            comments:[]
+            author: this.author,
+            comments: []
         }
     }
 }

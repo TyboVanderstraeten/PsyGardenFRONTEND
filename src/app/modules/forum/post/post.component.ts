@@ -8,10 +8,14 @@ import { Post } from '../post.model';
 })
 export class PostComponent implements OnInit {
   @Input() post: Post;
- 
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  shortToString(content: string): string {
+    return content.substring(0, 200).concat('...');
   }
 
 }
