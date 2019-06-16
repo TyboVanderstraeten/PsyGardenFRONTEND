@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .loading {
+    margin-left: 47%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }

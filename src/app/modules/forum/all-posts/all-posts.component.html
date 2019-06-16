@@ -1,4 +1,10 @@
-<mat-card>
-  <mat-card-header>Forum</mat-card-header>
-  <mat-card-content>Nothing</mat-card-content>
-</mat-card>
+<div *ngIf="(posts$  | async) as posts; else loading">
+  <br />
+  <div *ngFor="let post of posts" class="container">
+    <app-post [post]="post" class="box"></app-post>
+  </div>
+</div>
+
+<ng-template #loading>
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>
