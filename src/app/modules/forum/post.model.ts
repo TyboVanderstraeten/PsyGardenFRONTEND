@@ -1,5 +1,6 @@
 export class Post {
     private _postId: Number;
+    private _nrOfComments: Number;
 
     constructor(
         private _title: string,
@@ -10,6 +11,7 @@ export class Post {
     ) { }
 
     get postId(): Number { return this._postId; }
+    get nrOfComments(): Number { return this._nrOfComments; }
     get title(): string { return this._title; }
     get content(): string { return this._content; }
     get datePosted(): Date { return this._datePosted; }
@@ -20,6 +22,7 @@ export class Post {
         const postFromJSON = new Post(json.title, json.content, json.datePosted,
             json.author, json.comments);
         postFromJSON._postId = json.postId;
+        postFromJSON._nrOfComments = json.nrOfComments;
         return postFromJSON;
     }
 

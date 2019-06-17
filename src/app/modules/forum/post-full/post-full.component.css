@@ -18,6 +18,10 @@ mat-card-content{
   text-align: left;
 }
 
+.comment{
+  margin: 15px;
+}
+
 .loading {
     margin-left: 47%;
     margin-top: 20%;
