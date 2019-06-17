@@ -1,0 +1,28 @@
+table {
+  margin: 0 auto;
+  width: 65%;
+}
+
+td,
+th {
+  width: 10%;
+}
+
+th {
+  background-color: lightgray;
+}
+
+tr:hover {
+  background-color: lightblue;
+}
+
+td:nth-child(6),
+th:nth-child(6) {
+  width: 15%;
+}
+
+.loading {
+  margin-left: 47%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}

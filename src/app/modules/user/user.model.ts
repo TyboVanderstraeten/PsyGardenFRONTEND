@@ -1,4 +1,5 @@
 import { Event } from 'src/app/modules/event/event.model';
+import { Post } from '../forum/post.model';
 
 export class User {
     constructor(
@@ -8,7 +9,8 @@ export class User {
         private _email: string,
         private _isAdmin: boolean,
         private _interests: Event[],
-        private _goings: Event[]
+        private _goings: Event[],
+        private _posts: Post[]
     ) { }
 
     get userId(): Number { return this._userId; }
@@ -18,6 +20,7 @@ export class User {
     get isAdmin(): boolean { return this._isAdmin; }
     get interests(): Event[] { return this._interests; }
     get goings(): Event[] { return this._goings; }
+    get posts(): Post[] { return this._posts; }
 
     static fromJSON(json: any): User {
         const userFromJSON =
@@ -32,6 +35,9 @@ export class User {
                 ),
                 json.goings.map(
                     (goingsJSON: any): Event => Event.fromJSON(goingsJSON.event)
+                ),
+                json.posts.map(
+                    (postsJSON:any):Post => Post.fromJSON(postsJSON.post)
                 )
             );
         return userFromJSON;
