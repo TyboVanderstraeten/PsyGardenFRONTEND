@@ -16,6 +16,7 @@ import { UserModule } from './modules/user/user.module';
 import { GenreModule } from './modules/genre/genre.module';
 import { EventModule } from './modules/event/event.module';
 import { ForumModule } from './modules/forum/forum.module';
+import { CommunityModule } from './modules/community/community.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ForumModule } from './modules/forum/forum.module';
     GenreModule,
     EventModule,
     ForumModule,
+    CommunityModule,
     AppRoutingModule
   ],
   providers: [httpInterceptorProviders],

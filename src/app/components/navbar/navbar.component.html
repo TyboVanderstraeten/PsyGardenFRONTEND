@@ -6,6 +6,7 @@
         <a mat-button [routerLink]="['europe-map']">Map</a>
         <a mat-button [routerLink]="['genres']" *ngIf="(isUserLoggedIn())">Genres</a>
         <a mat-button [routerLink]="['all-posts']" *ngIf="(isUserLoggedIn())">Forum</a>
+        <a mat-button [routerLink]="['all-users']" *ngIf="(isUserLoggedIn())">Community</a>
       </span>
       <span class="box">
         <a [routerLink]="['all-events']">
