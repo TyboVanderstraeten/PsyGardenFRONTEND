@@ -5,8 +5,8 @@ import { AuthGuard } from '../user/auth.guard';
 import { AllUsersComponent } from './all-users/all-users.component';
 import { MaterialModule } from '../material/material.module';
 
-const routes:Routes = [
-  {path:'all-users',canActivate:[AuthGuard],component:AllUsersComponent}
+const routes: Routes = [
+  { path: 'all-users', canActivate: [AuthGuard], component: AllUsersComponent }
 ]
 @NgModule({
   declarations: [AllUsersComponent],
