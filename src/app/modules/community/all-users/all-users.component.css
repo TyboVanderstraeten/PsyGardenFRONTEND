@@ -1,3 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+mat-card {
+  width: 75%;
+}
+
 .loading {
   margin-left: 47%;
   margin-top: 20%;
