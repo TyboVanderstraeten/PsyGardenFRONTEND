@@ -1,18 +1,14 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .box {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  flex: 1 0 21%;
+  width: 25%;
+  margin: 15px;
 }
 
-mat-card {
-  width: 75%;
-}
 
 .loading {
   margin-left: 47%;

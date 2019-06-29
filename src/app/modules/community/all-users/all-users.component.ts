@@ -22,5 +22,4 @@ export class AllUsersComponent implements OnInit {
   get users$(): Observable<User[]> {
     return this._fetchUsers$;
   }
-
 }
